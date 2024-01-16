@@ -8,7 +8,7 @@
       "executionRestrictions": {
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
         "appVer": "3.23122.20",
-        "modifiedOn": "2024-01-16 16:33:27",
+        "modifiedOn": "2024-01-16 18:20:21",
         "policy": "{\"type\":\"unused\"}",
         "version": 1
       },
@@ -52,7 +52,7 @@
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
         "apiVer": 2,
         "appVer": "3.23122.20",
-        "modifiedOn": "2024-01-16 16:33:27",
+        "modifiedOn": "2024-01-16 18:20:21",
         "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[dbo].[ada_view_integracion_cis_2]\":[\"get\"]}}",
         "version": 1
       },
@@ -96,7 +96,7 @@
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
         "apiVer": 2,
         "appVer": "3.23122.20",
-        "modifiedOn": "2024-01-16 16:33:27",
+        "modifiedOn": "2024-01-16 18:20:21",
         "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[dbo].[ada_integra_conection_url_aranda_2]\":[\"get\"]}}",
         "version": 1
       },
