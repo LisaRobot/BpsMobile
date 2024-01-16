@@ -1704,6 +1704,7 @@ Inventario As screen:
                     Default: =""
                     Height: =150
                     HintText: ="Reportar fallas logicas o fisicas"
+                    MaxLength: =255
                     Mode: =TextMode.MultiLine
                     Reset: =resetarControles
                     Size: =16
@@ -1768,6 +1769,7 @@ Inventario As screen:
                 Nov_valor As text:
                     Default: =
                     Height: =150
+                    MaxLength: =255
                     Mode: =TextMode.MultiLine
                     Reset: =resetarControles
                     Size: =16
@@ -1813,6 +1815,7 @@ Inventario As screen:
                 Recom_valor As text:
                     Default: =""
                     Height: =150
+                    MaxLength: =255
                     Mode: =TextMode.MultiLine
                     Reset: =resetarControles
                     Size: =16
@@ -1858,6 +1861,7 @@ Inventario As screen:
                     Default: =""
                     Height: =150
                     HintText: ="Reportar trabajo realizado"
+                    MaxLength: =255
                     Mode: =TextMode.MultiLine
                     Reset: =resetarControles
                     Size: =16
