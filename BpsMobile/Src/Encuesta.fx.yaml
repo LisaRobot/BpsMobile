@@ -1,0 +1,712 @@
+"Encuesta As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    BackgroundImage: =textura_chat
+
+    Canvas1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =948
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1.Y + RectQuickActionBar1.Height
+        ZIndex: =3
+
+        DataCard3 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =745
+            Visible: =If(OpcEncuest_valor.Selected.Value = "SI",true,false)
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            Metodo As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =21
+                Text: ="Por favor califique de 1 a 5, donde 5 es satisfecho y 1 es NO satisfecho"
+                Width: =603
+                X: =18
+                Y: =4
+                ZIndex: =12
+
+            Group2 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =23
+
+                Pregunt4_valor As text:
+                    Default: =""
+                    DisplayMode: =If(FinalizarEncuesta = true,DisplayMode.View,DisplayMode.Edit)
+                    Height: =142
+                    Mode: =TextMode.MultiLine
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =480
+                    X: =71
+                    Y: =687
+                    ZIndex: =17
+
+                Pregunt4 As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(0, 32, 78, 1)
+                    Height: =70
+                    Size: =18
+                    Text: ="Tiene algún comentario o sugerencia"
+                    Width: =480
+                    X: =70
+                    Y: =617
+                    ZIndex: =18
+
+                visi_13 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(Pregunt4_valor.Text = "",true, false)
+                    Width: =38
+                    X: =32
+                    Y: =619
+                    ZIndex: =22
+
+            Group3 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =23
+
+                Pregunt3 As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(0, 32, 78, 1)
+                    Height: =80
+                    Size: =18
+                    Text: ="¿Cómo evalúa la calidad del servicio?"
+                    Width: =479
+                    X: =69
+                    Y: =447
+                    ZIndex: =15
+
+                Rating3 As rating:
+                    BorderThickness: =1
+                    Default: =0
+                    DisabledFill: =Self.Fill
+                    DisplayMode: =If(FinalizarEncuesta = true,DisplayMode.View,DisplayMode.Edit)
+                    FocusedBorderColor: =Self.BorderColor
+                    Height: =60
+                    HoverFill: =Self.Fill
+                    PressedFill: =Self.Fill
+                    Reset: =resetarControles
+                    Width: =479
+                    X: =69
+                    Y: =531
+                    ZIndex: =16
+
+                visi_12 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: =If(Rating3.Value= 0 ,true, false)
+                    Visible: =If(Rating3.Value= 0 ,true, false)
+                    Width: =38
+                    X: =31
+                    Y: =447
+                    ZIndex: =19
+
+            Group4 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =23
+
+                Pregunt2 As label:
+                    BorderThickness: =1
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(0, 32, 78, 1)
+                    Height: =80
+                    Size: =18
+                    Text: ="¿Cómo evalúa los tiempos de respuesta y/o de resolución a su requerimiento?"
+                    Width: =480
+                    X: =69
+                    Y: =283
+                    ZIndex: =13
+
+                Rating2 As rating:
+                    BorderThickness: =1
+                    Default: =0
+                    DisabledFill: =Self.Fill
+                    DisplayMode: =If(FinalizarEncuesta = true,DisplayMode.View,DisplayMode.Edit)
+                    FocusedBorderColor: =Self.BorderColor
+                    Height: =60
+                    HoverFill: =Self.Fill
+                    PressedFill: =Self.Fill
+                    Reset: =resetarControles
+                    Width: =480
+                    X: =69
+                    Y: =367
+                    ZIndex: =14
+
+                visi_11 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(Rating2.Value= 0 ,true, false)
+                    Width: =38
+                    X: =31
+                    Y: =282
+                    ZIndex: =20
+
+            Group15 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =24
+
+                Pregunt1 As label:
+                    BorderThickness: =1
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(0, 32, 78, 1)
+                    Height: =80
+                    Size: =18
+                    Text: ="¿Cómo califica la amabilidad, cordialidad y empatía del técnico que le atendió?"
+                    Width: =479
+                    X: =70
+                    Y: =122
+                    ZIndex: =2
+
+                Rating1 As rating:
+                    BorderThickness: =1
+                    Default: =0
+                    DisabledFill: =Self.Fill
+                    DisplayMode: =If(FinalizarEncuesta = true,DisplayMode.View,DisplayMode.Edit)
+                    FocusedBorderColor: =Self.BorderColor
+                    Height: =60
+                    HoverFill: =Self.Fill
+                    PressedFill: =Self.Fill
+                    Reset: =resetarControles
+                    Width: =479
+                    X: =71
+                    Y: =207
+                    ZIndex: =3
+
+                visi_10 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(Rating1.Value= 0 ,true, false)
+                    Width: =38
+                    X: =32
+                    Y: =120
+                    ZIndex: =21
+
+        Firm_Data As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =525
+            Update: =
+            Visible: =If(OpcEncuest_valor.Selected.Value = "SI",true,false)
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =3
+
+            signature As image:
+                Height: =62
+                Image: =Firm_valor
+                ImagePosition: =ImagePosition.Stretch
+                Visible: =false
+                Width: =56
+                X: =543
+                Y: =222
+                ZIndex: =4
+
+            Button2 As button:
+                BorderThickness: =0
+                Fill: =RGBA(208, 19, 31, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                OnSelect: |
+                    =If(
+                        And(
+                             !visi_10.Visible,
+                             !visi_11.Visible,
+                             !visi_12.Visible,
+                             !visi_13.Visible
+                                       
+                        ),
+                        Set(popup_FinEnc,true),
+                        Notify("Hay campos pendientes", NotificationType.Error)
+                    )
+                    
+                    
+                      
+                Size: =20
+                Text: ="Finalizar encuesta"
+                Width: =308
+                X: =147
+                Y: =411
+                ZIndex: =5
+
+            Firma As group:
+                Height: =5
+                Width: =5
+                X: =60
+                Y: =60
+                ZIndex: =6
+
+                Firm As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =
+                    Fill: =RGBA(0, 32, 78, 1)
+                    Height: =58
+                    OnSelect: =
+                    Size: =18
+                    Text: ="Firma"
+                    Width: =473
+                    X: =70
+                    Y: =40
+                    ZIndex: =1
+
+                Firm_valor As inkControl:
+                    BorderThickness: =1
+                    DisplayMode: =If(FinalizarEncuesta = true,DisplayMode.View,DisplayMode.Edit)
+                    Height: =277
+                    OnSelect: =Set(FirmaClient, JSON(signature.Image, JSONFormat.IncludeBinaryData))
+                    Reset: =resetarControles
+                    Width: =473
+                    X: =70
+                    Y: =114
+                    ZIndex: =2
+
+        DataCard5 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =105
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+            Label3 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Size: =24
+                Text: ="¿Registra encuesta?"
+                Width: =560
+                X: =30
+                Y: =12
+                ZIndex: =1
+
+            OpcEncuest_valor As radio:
+                Height: =72
+                Items: =["SI","NO"]
+                Layout: =Layout.Horizontal
+                RadioSize: =40
+                Reset: =resetarControles
+                Size: =21
+                Width: =215
+                X: =202
+                Y: =52
+                ZIndex: =2
+
+            visi_44 As label:
+                Align: =Align.Center
+                Color: =RGBA(208, 19, 31, 1)
+                FontWeight: =FontWeight.Bold
+                Size: =20
+                Text: ="*"
+                Tooltip: ="Ingrese número de caso"
+                Visible: =If(IsBlank(OpcEncuest_valor.Selected.Value), true,false)
+                Width: =38
+                X: =41
+                Y: =12
+                ZIndex: =3
+
+        DataCard6 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =171
+            Visible: =If(OpcEncuest_valor.Selected.Value = "NO", true,false)
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =6
+
+            Group20 As group:
+                Height: =5
+                Width: =5
+                X: =-5
+                Y: =-110
+                ZIndex: =4
+
+                MotNoEncuesta As text:
+                    Default: =""
+                    Height: =88
+                    Mode: =TextMode.MultiLine
+                    Size: =16
+                    Visible: =If(OpcEncuest_valor.Selected.Value = "NO", true,false)
+                    Width: =560
+                    X: =40
+                    Y: =58
+                    ZIndex: =1
+
+                DescItem_1 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =44
+                    Size: =18
+                    Text: ="Motivo"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(OpcEncuest_valor.Selected.Value = "NO", true,false)
+                    Width: =275
+                    X: =147
+                    ZIndex: =2
+
+                visi_16 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(MotNoEncuesta.Text = "", true,false)
+                    Width: =38
+                    X: =40
+                    Y: =4
+                    ZIndex: =3
+
+    Image2_3 As image:
+        Height: =73
+        Image: =logolinalca
+        Width: =105
+        X: =10
+        Y: =10
+        ZIndex: =6
+
+    Titulo1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+        RectQuickActionBar1 As rectangle:
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =88
+            Width: =Parent.Width
+            ZIndex: =1
+
+        Titulo As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =88
+            Size: =27
+            Text: ="BPS MOBILE"
+            Width: =Parent.Width
+            ZIndex: =2
+
+        Restablecer As icon.Reset:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Reload
+            OnSelect: |-
+                =Set(popup_ResVal3,true);
+                UpdateContext({FinalizarEncuesta: false})
+            X: =558
+            Y: =12
+            ZIndex: =5
+
+    FinEnc As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.36)
+        Height: =1119
+        Visible: =popup_FinEnc
+        Width: =639
+        Y: =12
+        ZIndex: =7
+
+        Rectangle2 As rectangle:
+            Height: =355
+            Width: =625
+            X: =6
+            Y: =286
+            ZIndex: =1
+
+        ConfEnvi_1 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverBorderColor: =RGBA(0, 32, 78, 1)
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: |-
+                =UpdateContext(
+                    {
+                      FinalizarEncuesta:true  
+                    }
+                );
+                Set(popup_FinEnc,false)
+            PressedBorderColor: =RGBA(0, 32, 78, 1)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="SI"
+            Width: =280
+            X: =28
+            Y: =536
+            ZIndex: =2
+
+        Button4_1 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: =Set(popup_FinEnc,false)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="NO"
+            Width: =280
+            X: =325
+            Y: =536
+            ZIndex: =3
+
+        Label4_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =70
+            Size: =21
+            Text: ="¿DESEAS FINALIZAR LA ENCUESTA?"
+            Width: =560
+            X: =28
+            Y: =445
+            ZIndex: =4
+
+        Icon1_1 As icon.Warning:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =127
+            Icon: =Icon.Warning
+            Width: =215
+            X: =200
+            Y: =315
+            ZIndex: =5
+
+    RestVal_3 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.36)
+        Height: =1124
+        Visible: =popup_ResVal3
+        Width: =639
+        X: =1
+        Y: =10
+        ZIndex: =8
+
+        Rectangle1_1 As rectangle:
+            Height: =325
+            Width: =638
+            Y: =300
+            ZIndex: =1
+
+        ConfEnvi_2 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverBorderColor: =RGBA(0, 32, 78, 1)
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: |-
+                =Set(
+                    FacturableArand,
+                    ""
+                ) & Set(
+                    TipoServicioArand,
+                    ""
+                ) & Set(
+                    NomUsuarioArand,
+                    ""
+                ) & Set(
+                    CiudadArand,
+                    ""
+                ) & Set(
+                    DireccionArand,
+                    ""
+                ) & Set(
+                    AsuntoArand,
+                    ""
+                ) & Set(
+                    resetarControles,
+                    true
+                ) & Set(
+                    resetarControles,
+                    false
+                );
+                Set(
+                    popup_ResVal1,
+                    false
+                );
+                Set(
+                    horaini,
+                    ""
+                );
+                Set(
+                    CasoEspArand,
+                    0
+                );
+                Set(
+                    SerialArand,
+                    ""
+                );
+                Clear(Fotos);
+                Set(
+                    popup_ResVal2,
+                    false
+                );
+                Set(
+                    CasoEspArand,
+                    0
+                );
+                Set(
+                    SerialArand,
+                    ""
+                );
+                Clear(Fotos);
+                Set(
+                    popup_ResVal2,
+                    false
+                );
+                Set(
+                    popup_ResVal3,
+                    false
+                );Navigate(Home)
+            PressedBorderColor: =RGBA(0, 32, 78, 1)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="SI"
+            Width: =280
+            X: =28
+            Y: =536
+            ZIndex: =2
+
+        Button4_2 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: =Set(popup_ResVal3,false)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="NO"
+            Width: =280
+            X: =325
+            Y: =536
+            ZIndex: =3
+
+        Label4_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =70
+            Size: =21
+            Text: ="¿Está seguro de que desea restablecer los datos?"
+            Width: =560
+            X: =28
+            Y: =445
+            ZIndex: =4
+
+        Icon1_2 As icon.Warning:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =127
+            Icon: =Icon.Warning
+            Width: =215
+            X: =200
+            Y: =315
+            ZIndex: =5
+
+    pie_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =1
+        ZIndex: =12
+
+        Rectangle3_2 As rectangle:
+            Fill: =RGBA(0, 32, 78, 1)
+            Width: =640
+            Y: =1035
+            ZIndex: =9
+
+        Icon4_2 As icon.ChevronRight:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =90
+            Icon: =Icon.NextArrow
+            OnSelect: |-
+                =If(
+                    OpcEncuest_valor.Selected.Value = "SI",
+                    If(
+                        And(
+                            !visi_10.Visible,
+                            !visi_11.Visible,
+                            !visi_12.Visible,
+                            !visi_13.Visible,
+                            FinalizarEncuesta = true
+                        ),
+                        Navigate(Resumen),
+                        Notify(
+                            "Diligencia todos los campos y finaliza la encuesta",
+                            NotificationType.Error
+                        )
+                    ),
+                    If(
+                        !visi_16.Visible,
+                        Navigate(Resumen),
+                        Notify(
+                            "Hay campos pendientes",
+                            NotificationType.Error
+                        )
+                    )
+                )
+            Width: =100
+            X: =390
+            Y: =1041
+            ZIndex: =10
+
+        Icon5_2 As icon.ChevronLeft:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =90
+            Icon: =Icon.BackArrow
+            OnSelect: =Navigate(Inventario)
+            Width: =100
+            X: =150
+            Y: =1041
+            ZIndex: =11
+

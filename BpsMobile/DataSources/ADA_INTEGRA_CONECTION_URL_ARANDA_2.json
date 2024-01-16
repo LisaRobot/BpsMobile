@@ -1,0 +1,51 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2023-11-14T18:31:08.9920000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "57dfb1b5-7d79-4046-a4da-fd831d5befe1-KeyId": "KeyId",
+      "ADDRESS1": "ADDRESS1",
+      "Asunto": "Asunto",
+      "CIUDAD": "CIUDAD",
+      "CLiente": "CLiente",
+      "CodigoSAP": "CodigoSAP",
+      "COMPANY": "COMPANY",
+      "CONSECUTIVO": "CONSECUTIVO",
+      "CTG_CAPTION": "CTG_CAPTION",
+      "Direccion": "Direccion",
+      "Fecha": "Fecha",
+      "FL_STR_HIERARCHY": "FL_STR_HIERARCHY",
+      "Id_clicIdea": "Id_clicIdea",
+      "IdCliente": "IdCliente",
+      "idGrupo": "idGrupo",
+      "JERARQUIA_MAYOR": "JERARQUIA_MAYOR",
+      "NOMBRE_CI": "NOMBRE_CI",
+      "Nombre_tabla": "Nombre_tabla",
+      "Num_Proyecto": "Num_Proyecto",
+      "NUMUERO_EQUIPOS": "NUMUERO_EQUIPOS",
+      "prio_description": "prio_description",
+      "reas_description": "reas_description",
+      "Serial": "Serial",
+      "SERIAL_CI": "SERIAL_CI",
+      "serv_description": "serv_description",
+      "serv_description_nohtml": "serv_description_nohtml",
+      "serv_id_by_project": "serv_id_by_project",
+      "serv_opened_date": "serv_opened_date",
+      "SERVICIO": "SERVICIO",
+      "stat_name": "stat_name",
+      "Tiempo": "Tiempo",
+      "UNAME": "UNAME",
+      "USERNAME": "USERNAME"
+    },
+    "DatasetName": "luma.cloud.linalca.com,ArandaDB8",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": false,
+    "Name": "ADA_INTEGRA_CONECTION_URL_ARANDA_2",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

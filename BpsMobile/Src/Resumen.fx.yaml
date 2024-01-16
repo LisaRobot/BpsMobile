@@ -1,0 +1,527 @@
+Resumen As screen:
+    BackgroundImage: =textura_chat
+
+    Container1 As groupContainer.manualLayoutContainer:
+        Height: =942
+        Width: =639
+        Y: =93
+        ZIndex: =1
+
+        Canvas1_5 As fluidGrid.fluidGridWithBlankCard:
+            AcceptsFocus: =true
+            BorderThickness: =0
+            Height: =942
+            Width: =Parent.Width
+            ZIndex: =1
+
+            UsuarioData_4 As dataCard.blankCard:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(30, 144, 255, 0)
+                Height: =839
+                Width: =639
+                WidthFit: =true
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                HtmlText1_2 As htmlViewer:
+                    AutoHeight: =true
+                    BorderStyle: =BorderStyle.Solid
+                    Fill: =RGBA(35, 148, 247, 0)
+                    Height: =975
+                    HtmlText: |-
+                        ="<!DOCTYPE html>
+                        <html>
+                        <head>
+                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                            <title>" & Clie_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf</title>
+                        </head>
+                        <body style='margin: 10px'>
+                        <div style='margin: 10px;'> 
+                                <table style='width: auto;height: auto; text-align: center;  padding-left:5px; font-weight: bold; padding-bottom: 0px;font-size: 1rem;' >
+                                    <tr>
+                                        <td style='border: 1px solid black;'>LC-FM-019 Rev.17 Ago/2021</td>
+                                        <td style='border: 1px solid black;'>REPORTE TÉCNICO</td>
+                                        <td style='border: 1px solid black;'><img src='https://i.imgur.com/OLOU9hM.png' style='width: 100%; max-width: 250px; height: auto;' /></td>
+                                    </tr>  
+                                </table>
+                            </div>
+                            <div style='margin: 10px;'>
+                                <table style='width: auto;height: auto; text-align: center;padding-right:5px;  padding-left:5px; font-weight: bold; background: #87CEEB; font-size: 0.8rem;'>
+                                    <tr>
+                                        <td style='border: 1px solid black;'>Tipo Actividad: PRESTACIÓN SERVICIOS<br>
+                                        NOMBRE DEL TÉCNICO: " & Especialista_valor & "<br>
+                                        FECHA:"&fecha&", HORA INICIAL: "&horaini&", HORA FINAL: " &horafin& ", DURACIÓN:"&duracion&" minuto(s)</td>
+                                        <td style='border: 1px solid black; '> #CASO DE ARANDA:" & CasoAranda_valor & " </td>
+                                    </tr>  
+                                </table>
+                            </div>
+                            <div style='margin: 10px;'>
+                            <h2 style ='background: #1E90FF; font-size: 1.2rem '>DATOS DEL CLIENTE</h2>
+                             
+                                <table style='width: auto;height: auto; text-align: left;padding-right:5px;  padding-left:5px; font-size: 0.8rem;'>         
+                                    <tr>
+                                        <td '><b>Compañia:</b> " & Clie_valor & " <br>
+                                        <b>Contrato:</b> " & Nit_valor & "<br>
+                                        <b>Ciudad:</b> " & listCiu.Selected.Value & "</td>
+                                        <td ><b>Cliente:</b> " & Clie_valor & " <br>
+                                        <b>Direccion:</b> " & DireccionActivo_valor & "<br>
+                                        <b>Sede:</b> " & SedeActivo_valor & "
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style='margin: 10px;'>
+                            <h2 style ='background: #1E90FF; ; font-size: 1.2rem '>DESCRIPCIÓN DEL EQUIPO</h2>
+                             
+                                <table style='width: auto;height: auto; text-align: left;padding-right:5px;  padding-left:5px; font-size: 0.8rem;'>   
+                                    <p style= ' font-size: 0.8rem;'><b>DESCRIPCIÓN DEL ITEM:</b> " & DescItem_valor & "</p>
+                                    <tr>
+                                        <td> <b>SERIE FÁBRICA: </b>" & SerFabEqui_valor & "</td>
+                                        <td> <b>SERIAL LINALCA:  </b>" & SerLinEqui_valor & "</td>
+                                        <td> <b>MODELO: </b>" & Mod_valor & "</td>
+                                    </tr>
+                                    <tr>
+                                        <td> <b>MARCA:  </b>" & Marc_valor & "</td>
+                                        <td> <b>DISCO DURO:  </b>" & ListDisDuro.Selected.Value & "</td>
+                                        <td> <b>MEMORIA RAM:  </b>" & ListMemRam.Selected.Value & "</td>
+                                    </tr>
+                                    <tr>
+                                        <td> <b>PROCESADOR:  </b>" & listProc.Selected.Value & "</td>
+                                        <td> <b>REF PROCESADOR:  </b>" & listRefProc.Selected.Value & "</td>
+                                        <td> <b>SISTEMA OPERATIVO:  </b>" & ListSisOpe.Selected.Value & "</td>
+                                    </tr> 
+                                    <tr>
+                                        <td> <b>VERSIÓN DE OFFICE: </b>" & ListVerOffic.Selected.Value & "</td>
+                                        <td> <b>ANTIVIRUS:  </b>" & ListAnt.Selected.Value & "</td>
+                                        <td> <b>LECTOR PDF: </b>" & ListPDF.Selected.Value & "</td>
+                                    </tr> 
+                                    <tr>
+                                        <td> <b>COMPRESOR: </b>  " & ListCom.Selected.Value & "</td>
+                                        <td> <b>TIPO ACTIVO:  </b>" & TipoAct_valor & "</td>
+                                        <td> <b>FORMATO:  </b>" & Form_valor & "</td>
+                                    </tr> 
+                                    <tr>
+                                        <td> <b>TIENE MONITOR ASIGNADO: </b>" & Mon_valor.Selected.Value & "</td>
+                                        <td> <b>SERIAL MONITOR: </b>" & SerLinMon_valor & "</td>
+                                        <td> <b>MEMORIA RAM: </b>" & ListMemRam.Selected.Value & "</td>
+                                    </tr>  
+                                </table>
+                            </div>
+                            <div style='margin: 10px;'>
+                            <h2 style ='background: #1E90FF; font-size: 1.2rem '>SERVICIO PRESTADO</h2>
+                             
+                                <table style='width: auto; height: auto; text-align: left;padding-right:5px;  padding-left:5px; font-size: 0.8rem;'> 
+                                    <td>
+                                        <b>UBICACIÓN DEL ACTIVO :</b> " & DireccionActivo_valor & "</br>
+                                        <b>PERSONA ENCARGADA DEL ACTIVO : </b> " & NomUsu_valor & "</br>
+                                        <b>OBSERVACIONES DEL TÉCNICO :</b> " & Obs_valor & "</br>
+                                        <b>TRABAJO REALIZADO :</b> " & TrabReal_valor & "</br>
+                                        <b>RECOMENDACIONES :</b> " & Recom_valor & "</br>
+                                        <b>CASO FINALIZADO CON NOVEDAD :</b> " & SelecNov.Selected.Value & "</br>
+                                        <b>NOVEDAD :</b> " & Nov_valor & "
+                                    </td>
+                                </table>
+                            </div>   
+                            <div style='margin: 10px;'> 
+                            <h2 style ='background: #1E90FF; font-size: 1.2rem; '>ENCUESTA (PERSONA ENCUESTADA: " & NomUsu_valor & ")</h2>
+                        
+                             "&If(OpcEncuest_valor.Selected.Value = "NO", "<P style= 'font-size: 0.8rem; text-align: left;padding-right:5px;  padding-left:5px;'>"&MotNoEncuesta.Text&" <P>",
+                            
+                                "<table style='width: auto;height: auto; text-align: left;padding-right:5px;  padding-left:5px; font-size: 0.8rem;'>  
+                                    <td><b>Pregunta 1: </b> " & Pregunt1 & "<br>
+                                        <b>Respuesta 1: </b> " & Rating1.Value & "
+                                        </br></br>
+                                        <b>Pregunta 2: </b> " & Pregunt2 & "<br>
+                                        <b>Respuesta 2: </b> " & Rating2.Value & "
+                                        </br></br>
+                                        <b>Pregunta 3: </b> " & Pregunt3 & "<br>
+                                        <b>Respuesta 3: </b> " & Rating3.Value & "
+                                        </br></br>
+                                        <b>Comentario o sugerencia:  </b>" & Pregunt4_valor & "<br>
+                                    </td>
+                                </table>
+                            </div>") &"
+                            
+                            <div style='margin: 10px;'> 
+                            <h2 style ='background: #1E90FF; font-size: 1.2rem'>FIRMA DEL CLIENTE: </h2>
+                            </div>
+                        </body>
+                        </html>
+                        "
+                    Size: =12
+                    Width: =639
+                    ZIndex: =9
+
+            DataCard1 As dataCard.blankCard:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =500
+                Width: =639
+                X: =0
+                Y: =1
+                ZIndex: =3
+
+                ContainerAdju As groupContainer.manualLayoutContainer:
+                    Height: =579
+                    Width: =639
+                    Y: =15
+                    ZIndex: =1
+
+                    "Gallery6_3 As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
+                        DelayItemLoading: =true
+                        Height: =346
+                        Items: =Fotos
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =4
+                        TemplateSize: =147
+                        Width: =639
+                        WrapCount: =3
+                        Y: =168
+                        ZIndex: =1
+
+                        Image5_3 As image:
+                            Height: =134
+                            Image: =ThisItem.Value
+                            ImagePosition: =ImagePosition.Stretch
+                            OnSelect: =Select(Parent)
+                            RadiusBottomLeft: =8
+                            RadiusBottomRight: =8
+                            RadiusTopLeft: =8
+                            RadiusTopRight: =8
+                            Width: =207
+                            Y: =13
+                            ZIndex: =1
+
+                    FirmaUsuario_3 As image:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        BorderThickness: =1
+                        Height: =114
+                        Image: =signature
+                        Width: =254
+                        X: =175
+                        ZIndex: =2
+
+                    Label3_3 As label:
+                        Fill: =RGBA(30, 144, 255, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =39
+                        Text: |-
+                            ="FOTO(S) DEL EQUIPO:"
+                        Width: =628
+                        X: =11
+                        Y: =129
+                        ZIndex: =3
+
+    Titulo1_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =5
+
+        RectQuickActionBar1_3 As rectangle:
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =88
+            Width: =Parent.Width
+            ZIndex: =3
+
+        Titulo_3 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =88
+            Size: =27
+            Text: ="BPS MOBILE"
+            Width: =Parent.Width
+            ZIndex: =4
+
+    Image2_6 As image:
+        Height: =73
+        Image: =logolinalca
+        Width: =105
+        X: =10
+        Y: =10
+        ZIndex: =7
+
+    FinServ_1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.36)
+        Height: =1125
+        Visible: =popup_visible
+        Width: =639
+        Y: =10
+        ZIndex: =8
+
+        Rectangle1_4 As rectangle:
+            Height: =325
+            Width: =638
+            Y: =300
+            ZIndex: =1
+
+        ConfEnvi_5 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverBorderColor: =RGBA(0, 32, 78, 1)
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: |-
+                =Set(
+                    horafin,
+                    Text(
+                        DateTimeValue(Now()),
+                        "hh:mm"
+                    )
+                ) & Set(
+                    fecha,
+                    Text(
+                        Now(),
+                        DateTimeFormat.ShortDate
+                    )
+                ) & Set(
+                    duracion,
+                    DateDiff(
+                        DateTimeValue(horaini),
+                        DateTimeValue(horafin),
+                        TimeUnit.Minutes
+                    )
+                ) & GuardarPDFS.Run(
+                    {
+                        file: {
+                            name: Clie_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf",
+                            contentBytes: PDF (
+                                Container1,
+                                {
+                                    ExpandContainers: true,
+                                    Size: PaperSize.A4,
+                                    Margin: "2cm",
+                                    Orientation: PaperOrientation.Portrait
+                                }
+                            )
+                        }
+                    }
+                );
+                Set(
+                    popup_visible,
+                    false
+                ) & Set(
+                    popup_visiblefin,
+                    true
+                );
+                Patch(
+                    InformeCasosBPSMobile,
+                    Defaults(InformeCasosBPSMobile),
+                    {
+                        ID_Caso: CasoAranda_valor.Text,
+                        AsuntoAranda: AsuntoAranda_valor.Text,
+                        TipoServicio: Tip_Servicio.Selected.Value,
+                        Facturable: ListFact.Selected.Value,
+                        Cliente: Clie_valor.Text,
+                        Nit: Nit_valor.Text,
+                        DirActivo: DireccionActivo_valor.Text,
+                        SedActivo: SedeActivo_valor.Text,
+                        Ciudad: listCiu.Selected.Value,
+                        Tipo_Recurso: TipoRecurso_valor.Selected.Value,
+                        Persona_Encargada_Activo: NomUsu_valor.Text,
+                        Cargo_Encargada_Activo: Cargo_valor.Text,
+                        Correo_Encargada_Activo: correo_valor.Text,
+                        Telef_Encargada_Activo: Telefono_valor.Text,
+                        Tipo_Activo: TipoAct_valor.Text,
+                        Serie_Fábrica: SerFabEqui_valor.Text,
+                        Serial_linalca: SerLinEqui_valor.Text,
+                        Descripción: DescItem_valor.Text,
+                        Marca: Marc_valor.Text,
+                        Modelo: Mod_valor.Text,
+                        Propietario: ListProp.Selected.Value,
+                        Monitor_Asignado: Mon_valor.Selected.Value,
+                        Serial_Monitor: SerLinMon_valor.Text,
+                        Memoria_RAM: ListMemRam.Selected.Value,
+                        Disco_Duro: ListDisDuro.Selected.Value,
+                        Procesador: listProc.Selected.Value,
+                        Referencia_Procesador: listRefProc.Selected.Value,
+                        Generación_procesador: ListGenPRoc.Selected.Value,
+                        Formato: Form_valor.Text,
+                        Sistema_Operativo: ListSisOpe.Selected.Value,
+                        VersionOffice: ListVerOffic.Selected.Value,
+                        Antivirus: ListAnt.Selected.Value,
+                        Compresor: ListCom.Selected.Value,
+                        LectorPDF: ListPDF.Selected.Value,
+                        Observación_del_Técnico: Obs_valor.Text,
+                        TrabajoRealizado: TrabReal_valor.Text,
+                        Recomendación: Recom_valor.Text,
+                        Novedad: SelecNov.Selected.Value,
+                        Observación_de_la_Novedad: Obs_valor.Text,
+                        Regitra_encuesta: OpcEncuest_valor.Selected.Value,
+                        MotivoNoRegistra: MotNoEncuesta.Text,
+                        RespEnc1: Rating1.Value,
+                        RespEnc2: Rating2.Value,
+                        RespEnc3: Rating3.Value,
+                        RespEnc4: Pregunt4_valor.Text,
+                        Especialista: Especialista_valor.Text,
+                        UbicacionGPS: "https://maps.googleapis.com/maps/api/staticmap?center=" & Latitud & "," & Longitud & "&zoom=18&size=600x600&key=AIzaSyBMSmu9kfZ5R4uwReQ5yZDjmjeGqpRb6bE&markers=color:red%7Clabel:A%7C" & Latitud & "," & Longitud & "",
+                        FechaServicio: fecha,
+                        Hora_Inicio: horaini,
+                        Hora_Final: horafin,
+                        Duración: duracion,
+                        RutaPDF: "https://linalcasa.sharepoint.com/sites/Intranet/BPO-IT/MantenimientosBPS/PDFS/ " & Clie_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf"
+                    }
+                );
+                If(
+                    Notify(
+                        "Servicio registrado",
+                        NotificationType.Success
+                    ),
+                    Navigate(Home)
+                )
+            PressedBorderColor: =RGBA(0, 32, 78, 1)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="SI"
+            Width: =280
+            X: =28
+            Y: =536
+            ZIndex: =2
+
+        Button4_5 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: =Set(popup_visible,false)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="NO"
+            Width: =280
+            X: =325
+            Y: =536
+            ZIndex: =3
+
+        Label4_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =70
+            Size: =21
+            Text: ="¿DESEAS FINALIZAR EL SERVICIO?"
+            Width: =560
+            X: =28
+            Y: =445
+            ZIndex: =4
+
+        Icon1_5 As icon.Warning:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =127
+            Icon: =Icon.Warning
+            Width: =215
+            X: =200
+            Y: =315
+            ZIndex: =5
+
+    Group17 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        Rectangle3_3 As rectangle:
+            Fill: =RGBA(0, 32, 78, 1)
+            Width: =640
+            Y: =1035
+            ZIndex: =9
+
+        Icon5_3 As icon.ChevronLeft:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =90
+            Icon: =Icon.BackArrow
+            OnSelect: =Navigate(Encuesta)
+            Width: =100
+            X: =150
+            Y: =1040
+            ZIndex: =11
+
+        Icon9 As icon.CheckBadge:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =90
+            Icon: =Icon.CheckBadge
+            OnSelect: =Set(popup_visible,true)
+            Width: =100
+            X: =390
+            Y: =1040
+            ZIndex: =14
+
+    GroupPDF_1 As group:
+        Height: =5
+        Width: =5
+        X: =-424
+        Y: =5
+        ZIndex: =21
+
+        pdf_3 As icon.Print:
+            BorderColor: =RGBA(0, 89, 178, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =60
+            Icon: =Icon.DocumentPDF
+            OnSelect: |-
+                =Notify(
+                    "Generando pdf......",
+                    NotificationType.Information
+                );
+                Set(
+                    pdfDoc,
+                    PDF(
+                        Container1,
+                        {
+                            ExpandContainers: true, 
+                            Size: PaperSize.A4,
+                            Margin: "2cm",
+                            Orientation: PaperOrientation.Portrait
+                        }
+                    )
+                ) & Set(
+                    popup_visiblefin,
+                    true
+                );
+                Set(
+                    ActBot,
+                    Not(ActBot)
+                )
+            Width: =60
+            X: =579
+            Y: =20
+            ZIndex: =5
+
+        DataCardValue89_3 As attachments:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =8
+            DisplayMode: =DisplayMode.View
+            DropTargetBackgroundColor: =RGBA(237, 237, 237, 1)
+            DropTargetBorderStyle: =BorderStyle.Solid
+            DropTargetBorderThickness: =4
+            Fill: =RGBA(202, 202, 202, 1)
+            Font: =Font.'Segoe UI'
+            Height: =44
+            IsInDataCard: =true
+            Items: |-
+                ={Name: CasoAranda_valor&"-"&SerLinEqui_valor&".pdf", Value:pdfDoc}
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5.18
+            PaddingTop: =5.18
+            Reset: =resetarControles
+            Size: =11
+            Tooltip: =
+            Visible: =ActBot
+            Width: =215
+            X: =424
+            Y: =93
+            ZIndex: =6
+

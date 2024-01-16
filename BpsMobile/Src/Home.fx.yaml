@@ -1,0 +1,21 @@
+Home As screen:
+    BackgroundImage: =textura_chat
+
+    Image1 As image:
+        Height: =1136
+        Image: =Captura
+        ImagePosition: =ImagePosition.Stretch
+        Width: =640
+        ZIndex: =1
+
+    Icon10 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =240
+        Icon: =Icon.NextArrow
+        OnSelect: |
+            =Navigate(Inicio)
+        Width: =235
+        X: =207
+        Y: =807
+        ZIndex: =2
+

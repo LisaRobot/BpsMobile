@@ -1,0 +1,1097 @@
+Caso As screen:
+    BackgroundImage: =textura_chat
+    ImagePosition: =ImagePosition.Stretch
+
+    Canvas1_1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =943
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1.Y + RectQuickActionBar1.Height
+        ZIndex: =1
+
+        UsuarioData_1 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1619
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            Label1 As label:
+                Align: =Align.Center
+                Fill: =RGBA(237, 237, 237, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =26
+                Text: ="Información del servicio"
+                Width: =560
+                X: =36
+                Y: =5
+                ZIndex: =1
+
+            Group7 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =35
+
+                UbicacionActivo As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =58
+                    Size: =18
+                    Text: ="Dirección del activo"
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =275
+                    X: =171
+                    Y: =481
+                    ZIndex: =6
+
+                DireccionActivo_valor As text:
+                    Default: =DireccionArand
+                    Height: =51
+                    HintText: ="Ingrese la dirección"
+                    Reset: =resetarControles
+                    Size: =16
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =560
+                    X: =36
+                    Y: =548
+                    ZIndex: =7
+
+                visi_3 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(DireccionActivo_valor.Text = "",true, false)
+                    Width: =38
+                    X: =36
+                    Y: =496
+                    ZIndex: =34
+
+            Group8 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =36
+
+                SedeActivo As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =58
+                    Size: =18
+                    Text: ="Sede del activo"
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =268
+                    X: =174
+                    Y: =619
+                    ZIndex: =28
+
+                SedeActivo_valor As text:
+                    Default: =""
+                    Height: =51
+                    HintText: ="Ingrese la sede"
+                    Reset: =resetarControles
+                    Size: =16
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =560
+                    X: =36
+                    Y: =684
+                    ZIndex: =29
+
+                visi_4 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(SedeActivo_valor.Text = "",true, false)
+                    Width: =38
+                    X: =36
+                    Y: =636
+                    ZIndex: =35
+
+            Group10 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =38
+
+                TipoRecurso As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Size: =18
+                    Text: ="Tipo de recurso"
+                    Width: =203
+                    X: =347
+                    Y: =775
+                    ZIndex: =14
+
+                TipoRecurso_valor As dropdown:
+                    ChevronBackground: =RGBA(208, 19, 31, 1)
+                    Height: =50
+                    Items: =["","Interno","Externo"]
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =284
+                    X: =316
+                    Y: =828
+                    ZIndex: =15
+
+                visi_6 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(TipoRecurso_valor.Selected.Value = "",true, false)
+                    Width: =38
+                    X: =320
+                    Y: =772
+                    ZIndex: =37
+
+            "'Datos del usuario' As label":
+                Align: =Align.Center
+                Fill: =RGBA(237, 237, 237, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =26
+                Text: ="Datos del usuario"
+                Width: =560
+                X: =36
+                Y: =918
+                ZIndex: =42
+
+            Group14 As group:
+                Height: =5
+                Width: =5
+                X: =1
+                Y: =38
+                ZIndex: =47
+
+                NomUsu_valor As text:
+                    Default: =NomUsuarioArand
+                    Height: =50
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =481
+                    X: =36
+                    Y: =1090
+                    ZIndex: =40
+
+                Nomb_usuario As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =58
+                    Size: =17
+                    Text: ="Nombre Usuario"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =330
+                    X: =104
+                    Y: =1020
+                    ZIndex: =43
+
+                visi_8 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(NomUsu_valor.Text = "",true, false)
+                    Width: =38
+                    X: =36
+                    Y: =1020
+                    ZIndex: =45
+
+            Group13 As group:
+                Height: =5
+                Width: =5
+                X: =1
+                Y: =38
+                ZIndex: =48
+
+                Cargo_valor As text:
+                    Default: =""
+                    Height: =50
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =481
+                    X: =36
+                    Y: =1239
+                    ZIndex: =41
+
+                Cargo As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =58
+                    Size: =17
+                    Text: ="Cargo"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =330
+                    X: =104
+                    Y: =1173
+                    ZIndex: =44
+
+            Group5_1 As group:
+                Height: =5
+                Width: =5
+                X: =13
+                Y: =-82
+                ZIndex: =50
+
+                CasoAranda_1 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Size: =18
+                    Text: ="Asunto Aranda"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =198
+                    X: =202
+                    Y: =341
+                    ZIndex: =47
+
+                AsuntoAranda_valor As text:
+                    Default: =AsuntoArand
+                    Height: =79
+                    HintText: ="Asunto"
+                    Mode: =TextMode.MultiLine
+                    Reset: =resetarControles
+                    Size: =16
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =531
+                    X: =36
+                    Y: =392
+                    ZIndex: =48
+
+                visi_15 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(AsuntoAranda_valor.Text = "",true, false)
+                    Width: =36
+                    X: =42
+                    Y: =341
+                    ZIndex: =49
+
+            Group6_1 As group:
+                Height: =5
+                Width: =5
+                X: =-11
+                Y: =-1010
+                ZIndex: =53
+
+                Facturable_1 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Size: =18
+                    Text: ="Tipo de servicio"
+                    Width: =299
+                    X: =63
+                    Y: =105
+                    ZIndex: =50
+
+                Tip_Servicio As dropdown:
+                    ChevronBackground: =RGBA(208, 19, 31, 1)
+                    Default: =TipoServicioArand
+                    Items: =[TipoServicioArand,"MANTENIMIENTOS","INVENTARIOS","SERVICIOS FACTURABLES","SERVICIOS CORRECTIVOS"]
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =336
+                    X: =36
+                    Y: =157
+                    ZIndex: =51
+
+                visi_14 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(Tip_Servicio.Selected.Value = "",true, false)
+                    Width: =40
+                    X: =36
+                    Y: =105
+                    ZIndex: =52
+
+            Group19 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =55
+
+                Facturable As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Size: =18
+                    Text: ="Facturable"
+                    Width: =151
+                    X: =434
+                    Y: =105
+                    ZIndex: =4
+
+                visi_2 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(ListFact.Selected.Value = "",true, false)
+                    Width: =38
+                    X: =404
+                    Y: =105
+                    ZIndex: =33
+
+                ListFact As dropdown:
+                    ChevronBackground: =RGBA(208, 19, 31, 1)
+                    Default: ="3"
+                    Items: =[FacturableArand,"SI","NO"]
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =120
+                    X: =454
+                    Y: =157
+                    ZIndex: =54
+
+            Group9 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =56
+
+                Ciud As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Font: =Font.'Segoe UI'
+                    Size: =18
+                    Text: ="Ciudad"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =198
+                    X: =57
+                    Y: =771
+                    ZIndex: =31
+
+                visi_5 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Visible: =If(IsBlank(listCiu.Selected.Value),true,false)
+                    Width: =38
+                    X: =36
+                    Y: =767
+                    ZIndex: =36
+
+                listCiu As dropdown:
+                    ChevronBackground: =RGBA(208, 19, 31, 1)
+                    Height: =50
+                    Items: |-
+                        =[
+                        CiudadArand,
+                        "Acacias",
+                        "Aguachica",
+                        "Aguazul",
+                        "Antioquia",
+                        "Apartadó",
+                        "Arauca",
+                        "Arjona",
+                        "Armenia",
+                        "Ayapel",
+                        "Baranoa",
+                        "Barbosa",
+                        "Barrancabermeja",
+                        "Barranquilla",
+                        "Bello",
+                        "Bogota DC",
+                        "Bolivar",
+                        "Bucaramanga",
+                        "Buenaventura",
+                        "Buga",
+                        "Cajicá",
+                        "Caldas",
+                        "CALERA",
+                        "Cali",
+                        "Candelaria",
+                        "Carepa",
+                        "Carlarcá",
+                        "Cartagena",
+                        "Cartago",
+                        "Castilla",
+                        "Caucasia",
+                        "Cereté",
+                        "CESAR",
+                        "Chia",
+                        "Chía",
+                        "Chigorodó",
+                        "Chinchiná",
+                        "Chinú",
+                        "Chipaque",
+                        "Chiquinquirá",
+                        "Cicuco",
+                        "Ciénaga de Oro",
+                        "Ciénaga",
+                        "Copacabana",
+                        "Córdoba",
+                        "Corozal",
+                        "Cota",
+                        "Coveñas",
+                        "Cúcuta",
+                        "Cusiana",
+                        "Dosquebradas",
+                        "Duitama",
+                        "El Bagre",
+                        "El Banco",
+                        "El Carmen de Bolívar",
+                        "El Cerrito",
+                        "EL Rosal",
+                        "Envigado",
+                        "Espinal",
+                        "Facatativá",
+                        "Florencia",
+                        "Florida blanca",
+                        "Florida",
+                        "Fundación",
+                        "Funza",
+                        "Fusagasugá",
+                        "Garzón",
+                        "Girardort",
+                        "Girardota",
+                        "Girón",
+                        "Granada",
+                        "Guarne",
+                        "Guasca",
+                        "Ibagué",
+                        "Ipiales",
+                        "Itagüí",
+                        "Jamundí",
+                        "La Ceja",
+                        "La Dorada",
+                        "La Estrella",
+                        "La Mata",
+                        "La Plata",
+                        "LINALCA MANTENIMIENTO",
+                        "Lorica",
+                        "Los Patios",
+                        "Madrid",
+                        "Magangué",
+                        "Maicao",
+                        "Malambo",
+                        "Mamonal",
+                        "Manaure",
+                        "Manizalez",
+                        "Marinilla",
+                        "Medellín",
+                        "Mexico",
+                        "Montelíbano",
+                        "Montería",
+                        "Monterrey",
+                        "Mosquera",
+                        "N/A",
+                        "Necoclí",
+                        "Neiva",
+                        "Ocaña",
+                        "Orito",
+                        "Palmira",
+                        "Pamplona",
+                        "Pasto",
+                        "Pereira",
+                        "Piedecuesta",
+                        "Pitalito",
+                        "Planeta Rica",
+                        "Plato",
+                        "Popayán",
+                        "Pradera",
+                        "Providencia",
+                        "Puerto Asís",
+                        "Puerto Berrío",
+                        "Puerto Boyacá",
+                        "Puerto Libertador",
+                        "Puerto Salgar",
+                        "Quibdó",
+                        "Ricaurte",
+                        "Rioceibas",
+                        "Riohacha",
+                        "Rionegro",
+                        "Riosucio",
+                        "Risaralda",
+                        "Sabanalarga",
+                        "Sabaneta",
+                        "Sahagún",
+                        "San Alberto",
+                        "San Andrés",
+                        "san carlos antioquia",
+                        "San Gil",
+                        "San José del Guaviare",
+                        "San Marcos",
+                        "SAN MARTIN META",
+                        "San Martin",
+                        "San Onofre",
+                        "San Vicente del Caguán",
+                        "Santa Marta",
+                        "Santa Rosa de Cabal",
+                        "Santander de Quilichao",
+                        "Santander",
+                        "Santiago de Cali",
+                        "Sincelejo",
+                        "Soacha",
+                        "Sogamoso",
+                        "Soledad",
+                        "Sopo",
+                        "Tame",
+                        "Tibu",
+                        "Tierralta",
+                        "Toldado",
+                        "Tuluá",
+                        "Tumaco",
+                        "Tunja",
+                        "Turbaco",
+                        "Turbo",
+                        "Tuta",
+                        "Uribia",
+                        "Valle del Guamuez",
+                        "Valledupar",
+                        "Vereda Canavita",
+                        "Villa del Rosario",
+                        "Villamaría",
+                        "Villavicencio",
+                        "Yaguara",
+                        "Yopal",
+                        "Yumbo",
+                        "Zipaquirá",
+                        "Zona Bananera",
+                        "Zulia",
+                        
+                        ]
+                    Reset: =resetarControles
+                    Size: =21
+                    Width: =270
+                    X: =36
+                    Y: =828
+                    ZIndex: =55
+
+            Group8_1 As group:
+                Height: =5
+                Width: =5
+                X: =4
+                Y: =-579
+                ZIndex: =59
+
+                SedeActivo_1 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =58
+                    Size: =18
+                    Text: ="Correo"
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =268
+                    X: =174
+                    Y: =1325
+                    ZIndex: =56
+
+                correo_valor As text:
+                    Default: =""
+                    Height: =51
+                    HintText: =""
+                    Reset: =resetarControles
+                    Size: =16
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =560
+                    X: =36
+                    Y: =1390
+                    ZIndex: =57
+
+                visi_9 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(correo_valor.Text = "",true, false)
+                    Width: =38
+                    X: =36
+                    Y: =1342
+                    ZIndex: =58
+
+            Group8_2 As group:
+                Height: =5
+                Width: =5
+                X: =4
+                Y: =-1285
+                ZIndex: =62
+
+                SedeActivo_2 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =58
+                    Size: =18
+                    Text: ="Telefono"
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =268
+                    X: =174
+                    Y: =1457
+                    ZIndex: =59
+
+                Telefono_valor As text:
+                    Default: =""
+                    Height: =51
+                    HintText: =""
+                    Reset: =resetarControles
+                    Size: =16
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =560
+                    X: =36
+                    Y: =1522
+                    ZIndex: =60
+
+                visi_32 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(Telefono_valor.Text = "",true, false)
+                    Width: =38
+                    X: =36
+                    Y: =1474
+                    ZIndex: =61
+
+            Group5 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =63
+
+                CasoAranda As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Size: =18
+                    Text: ="Caso Aranda"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =253
+                    X: =95
+                    Y: =225
+                    ZIndex: =2
+
+                visi_1 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(CasoAranda_valor.Text = "",true, false)
+                    Width: =46
+                    X: =36
+                    Y: =226
+                    ZIndex: =32
+
+                CasoAranda_valor As text:
+                    Default: =CasoEspArand
+                    Height: =50
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =303
+                    X: =44
+                    Y: =269
+                    ZIndex: =62
+
+        DataCard4 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =135
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+            Group12 As group:
+                Height: =5
+                Width: =5
+                X: =12
+                Y: =-1310
+                ZIndex: =4
+
+                Especialista As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Size: =18
+                    Text: ="Especialista"
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =229
+                    X: =194
+                    Y: =24
+                    ZIndex: =1
+
+                Especialista_valor As text:
+                    Align: =Align.Center
+                    Default: =User().FullName
+                    Height: =50
+                    Reset: =resetarControles
+                    Size: =16
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =511
+                    X: =43
+                    Y: =79
+                    ZIndex: =2
+
+                visi_7 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(Especialista_valor.Text = "",true, false)
+                    Width: =38
+                    X: =40
+                    Y: =16
+                    ZIndex: =3
+
+        DataCard7 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =521
+            Visible: =If(ClientArand = "G4S TECHNOLOGY COLOMBIA S.A",true,false)
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =4
+
+            Group13_1 As group:
+                Height: =5
+                Width: =5
+                X: =-9
+                Y: =-1280
+                ZIndex: =3
+
+                Cedula_Valor As text:
+                    Default: =""
+                    Height: =50
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =250
+                    X: =36
+                    Y: =90
+                    ZIndex: =1
+
+                Cedula_1 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =58
+                    Size: =17
+                    Text: ="Cedula"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =200
+                    X: =86
+                    Y: =24
+                    ZIndex: =2
+
+            Group13_2 As group:
+                Height: =5
+                Width: =5
+                X: =-9
+                Y: =-1280
+                ZIndex: =6
+
+                Correo_valor As text:
+                    Default: =""
+                    Height: =50
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =297
+                    X: =36
+                    Y: =244
+                    ZIndex: =4
+
+                Correo_1 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =58
+                    Size: =17
+                    Text: ="Correo"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =229
+                    X: =70
+                    Y: =178
+                    ZIndex: =5
+
+            Group21 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =8
+
+                Cedula_2 As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =58
+                    Size: =17
+                    Text: ="Departamento"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =200
+                    X: =359
+                    Y: =24
+                    ZIndex: =6
+
+                Dropdown1 As dropdown:
+                    ChevronBackground: =RGBA(208, 19, 31, 1)
+                    Height: =50
+                    Items: =["","RISK","SEGURE","TECHNOLOGY"]
+                    Size: =21
+                    Width: =277
+                    X: =321
+                    Y: =90
+                    ZIndex: =7
+
+    RectQuickActionBar1_4 As rectangle:
+        Fill: =RGBA(0, 32, 78, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Titulo_4 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =27
+        Text: ="BPS MOBILE"
+        Width: =Parent.Width
+        ZIndex: =3
+
+    Restablecer_1 As icon.Reset:
+        AccessibleLabel: =
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Reload
+        OnSelect: |-
+            =Set(
+                popup_ResVal1,
+                true
+            ) 
+        X: =558
+        Y: =12
+        ZIndex: =4
+
+    Image2_5 As image:
+        Height: =73
+        Image: =logolinalca
+        Width: =105
+        X: =10
+        Y: =10
+        ZIndex: =5
+
+    RestVal_4 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.36)
+        Height: =1121
+        Visible: =popup_ResVal1
+        Width: =639
+        X: =1
+        Y: =10
+        ZIndex: =6
+
+        Rectangle1_2 As rectangle:
+            Height: =325
+            Width: =638
+            Y: =300
+            ZIndex: =1
+
+        ConfEnvi_3 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverBorderColor: =RGBA(0, 32, 78, 1)
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: |-
+                =Set(
+                    FacturableArand,
+                    ""
+                ) & Set(
+                    TipoServicioArand,
+                    ""
+                ) & Set(
+                    NomUsuarioArand,
+                    ""
+                ) & Set(
+                    CiudadArand,
+                    ""
+                ) & Set(
+                    DireccionArand,
+                    ""
+                ) & Set(
+                    AsuntoArand,
+                    ""
+                ) & Set(
+                    resetarControles,
+                    true
+                ) & Set(
+                    resetarControles,
+                    false
+                );
+                Set(
+                    popup_ResVal1,
+                    false
+                );
+                Set(
+                    horaini,
+                    ""
+                );
+                Set(
+                    CasoEspArand,
+                    0
+                );
+                Set(
+                    SerialArand,
+                    ""
+                );
+                Clear(Fotos);
+                Set(
+                    popup_ResVal2,
+                    false
+                );
+                Set(
+                    CasoEspArand,
+                    0
+                );
+                Set(
+                    SerialArand,
+                    ""
+                );
+                Clear(Fotos);
+                Set(
+                    popup_ResVal2,
+                    false
+                );
+                Set(
+                    popup_ResVal3,
+                    false
+                );Navigate(Home)
+            PressedBorderColor: =RGBA(0, 32, 78, 1)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="SI"
+            Width: =280
+            X: =28
+            Y: =536
+            ZIndex: =2
+
+        Button4_3 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: =Set(popup_ResVal1,false)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="NO"
+            Width: =280
+            X: =325
+            Y: =536
+            ZIndex: =3
+
+        Label4_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =70
+            Size: =21
+            Text: ="¿Está seguro de que desea restablecer los datos?"
+            Width: =560
+            X: =28
+            Y: =445
+            ZIndex: =4
+
+        Icon1_3 As icon.Warning:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =127
+            Icon: =Icon.Warning
+            Width: =215
+            X: =200
+            Y: =315
+            ZIndex: =5
+
+    pie_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =-2
+        ZIndex: =10
+
+        Rectangle3_5 As rectangle:
+            Fill: =RGBA(0, 32, 78, 1)
+            Width: =640
+            Y: =1035
+            ZIndex: =7
+
+        Icon4_4 As icon.ChevronRight:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =90
+            Icon: =Icon.NextArrow
+            OnSelect: |
+                =If(
+                    And(
+                         !visi_1.Visible,
+                         !visi_2.Visible,
+                         !visi_3.Visible,
+                         !visi_4.Visible,
+                         !visi_5.Visible,
+                         !visi_6.Visible,
+                         !visi_7.Visible,
+                         !visi_8.Visible,
+                         !visi_9.Visible,
+                         !visi_32.Visible,
+                         !visi_14.Visible,
+                         !visi_15.Visible
+                         
+                
+                           
+                    ),
+                    Navigate(Inventario),
+                    Notify("Hay campos pendientes", NotificationType.Error)
+                )
+            Width: =100
+            X: =390
+            Y: =1040
+            ZIndex: =8
+
+        Icon5_5 As icon.ChevronLeft:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =90
+            Icon: =Icon.BackArrow
+            OnSelect: =Navigate(Home)
+            Width: =100
+            X: =150
+            Y: =1040
+            ZIndex: =9
+

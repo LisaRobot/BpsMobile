@@ -1,0 +1,192 @@
+Agenda As screen:
+
+    Gallery6 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =984
+        Items: |+
+            =Search(
+                ADA_INTEGRA_CONECTION_URL_ARANDA_2,
+                User().FullName,"UNAME")
+                
+            
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =201
+        Y: =121
+        ZIndex: =1
+
+        Rectangle9 As rectangle:
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =201
+            OnSelect: =Select(Parent)
+            Width: =625
+            ZIndex: =1
+
+        Caso_aranda As label:
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.serv_id_by_project
+            Width: =625
+            ZIndex: =2
+
+        cliente As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.COMPANY
+            Width: =625
+            Y: =29
+            ZIndex: =3
+
+        Direccion As label:
+            AutoHeight: =true
+            Height: =12
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.Direccion
+            Width: =625
+            Y: =76
+            ZIndex: =4
+
+        Ciudad As label:
+            AutoHeight: =true
+            Height: =42
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.CIUDAD
+            Width: =625
+            Y: =118
+            ZIndex: =5
+
+        Fecha As label:
+            AutoHeight: =true
+            Height: =42
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.Fecha
+            Width: =625
+            Y: =159
+            ZIndex: =6
+
+        Iniciar As icon.CheckBadge:
+            Icon: =Icon.Send
+            OnSelect: |-
+                =Set(
+                    AsuntoArand,
+                    ThisItem.Asunto
+                ) & Set(
+                    DireccionArand,
+                    ThisItem.Direccion
+                ) & Set(
+                    CiudadArand,
+                    ThisItem.CIUDAD
+                ) & Set(
+                    NomUsuarioArand,
+                    ThisItem.CLiente
+                ) & Set(
+                    TipoServicioArand,
+                    ThisItem.SERVICIO
+                ) & Set(
+                    FacturableArand,
+                    If(
+                        ThisItem.SERVICIO = "SERVICIOS FACTURABLES",
+                        "SI",
+                        "NO"
+                    )
+                ) & Set(
+                    CasoEspArand,
+                    ThisItem.serv_id_by_project
+                ) & Set(
+                    SerialArand,
+                    ThisItem.Serial
+                ) & Set(
+                    ClientArand,
+                    ThisItem.COMPANY
+                ) & Set(
+                    Latitud,
+                    Location.Latitude
+                ) & Set(
+                    Longitud,
+                    Location.Longitude
+                ) & Set(
+                    horaini,
+                    Text(
+                        DateTimeValue(Now()),
+                        "hh:mm"
+                    )
+                );
+                If(
+                    IsBlank(Latitud_valor) And IsBlank(Longitud_valor),
+                    Notify(
+                        "Activa la ubicación del equipo y reinicie la aplicación",
+                        NotificationType.Error
+                    ),
+                    Navigate(Caso)
+                )
+            X: =541
+            Y: =52
+            ZIndex: =7
+
+    Group11_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =5
+
+        RectQuickActionBar1_6 As rectangle:
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =88
+            Width: =Parent.Width
+            ZIndex: =1
+
+        Titulo_6 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =88
+            Size: =27
+            Text: ="BPS MOBILE"
+            Width: =Parent.Width
+            ZIndex: =2
+
+        Image2_8 As image:
+            Height: =73
+            Image: =logolinalca
+            Width: =105
+            X: =10
+            Y: =10
+            ZIndex: =3
+
+        Icon5_7 As icon.ChevronLeft:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =78
+            Icon: =Icon.BackArrow
+            OnSelect: =Navigate(Inicio)
+            Width: =88
+            X: =552
+            Y: =5
+            ZIndex: =4
+
+    Longitud_valor As label:
+        Height: =70
+        Size: =21
+        Text: =Longitud
+        Visible: =false
+        Width: =183
+        X: =163
+        Y: =1062
+        ZIndex: =7
+
+    Latitud_valor As label:
+        Height: =70
+        Size: =21
+        Text: =Latitud
+        Visible: =false
+        Width: =183
+        Y: =1062
+        ZIndex: =8
+

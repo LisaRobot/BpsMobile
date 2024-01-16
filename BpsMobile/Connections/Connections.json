@@ -1,0 +1,198 @@
+{
+  "27817125-083d-49dd-b1ed-a5d624a19c55": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "authenticationType": "sqlAuthentication",
+      "displayName": "SQL Server",
+      "executionRestrictions": {
+        "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
+        "appVer": "3.23122.20",
+        "modifiedOn": "2024-01-16 16:17:24",
+        "policy": "{\"type\":\"unused\"}",
+        "version": 1
+      },
+      "gatewayObjectIdHint": "13d21a9b-8808-4c28-b239-550f51bb2daf",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1670/1.0.1670.3526/sql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sql",
+      "isOnPremiseConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "runtimePolicyName": "3a29f6d8-0208-4326-bda1-2c8284c26643",
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_sql/connections/39662cade1ea421d8bb5469ee92fc299"
+    },
+    "datasets": {
+      "luma.cloud.linalca.com,IntegradorBSC": {
+        "dataSources": {
+          "BPSMOBILE": {
+            "tableName": "[dbo].[BPSMOBILE]"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "BPSMOBILE"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "endpoints": [
+      "luma.cloud.linalca.com,IntegradorBSC"
+    ],
+    "id": "27817125-083d-49dd-b1ed-a5d624a19c55"
+  },
+  "6d860106-74b3-4489-9ca9-b7704e08391b": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "authenticationType": "sqlAuthentication",
+      "displayName": "SQL Server",
+      "executionRestrictions": {
+        "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
+        "appVer": "3.23122.20",
+        "modifiedOn": "2024-01-16 16:17:24",
+        "policy": "{\"type\":\"unused\"}",
+        "version": 1
+      },
+      "gatewayObjectIdHint": "13d21a9b-8808-4c28-b239-550f51bb2daf",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1670/1.0.1670.3526/sql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sql",
+      "isOnPremiseConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "runtimePolicyName": "48cffbdf-7698-4eae-bd30-3cf04c3b14cc",
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_sql/connections/13ad1a055acb4d61b9fca7976f3e15cd"
+    },
+    "datasets": {
+      "VM-HBT-SQLM7,SBOLINALCA": {
+        "dataSources": {
+          "ADA_VIEW_INTEGRACION_CIS_2": {
+            "tableName": "[dbo].[ADA_VIEW_INTEGRACION_CIS_2]"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "ADA_VIEW_INTEGRACION_CIS_2"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "endpoints": [
+      "VM-HBT-SQLM7,SBOLINALCA"
+    ],
+    "id": "6d860106-74b3-4489-9ca9-b7704e08391b"
+  },
+  "705c241c-223d-48fb-ae47-0818880b660c": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "authenticationType": "sqlAuthentication",
+      "displayName": "SQL Server",
+      "executionRestrictions": {
+        "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
+        "appVer": "3.23122.20",
+        "modifiedOn": "2024-01-16 16:17:24",
+        "policy": "{\"type\":\"unused\"}",
+        "version": 1
+      },
+      "gatewayObjectIdHint": "ffaffe62-c66e-4add-8844-9e2fea214b27",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1670/1.0.1670.3526/sql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sql",
+      "isOnPremiseConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "runtimePolicyName": "018d4301-7835-4d67-9aef-52efe69f9914",
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_sql/connections/90b2850532eb44a3aa34d5bfdbea5aed"
+    },
+    "datasets": {
+      "luma.cloud.linalca.com,ArandaDB8": {
+        "dataSources": {
+          "ADA_INTEGRA_CONECTION_URL_ARANDA_2": {
+            "tableName": "[dbo].[ADA_INTEGRA_CONECTION_URL_ARANDA_2]"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "ADA_INTEGRA_CONECTION_URL_ARANDA_2"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "endpoints": [
+      "luma.cloud.linalca.com,ArandaDB8"
+    ],
+    "id": "705c241c-223d-48fb-ae47-0818880b660c"
+  },
+  "93c591c4-3412-46e2-a7ae-a896ac7ca3a2": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Flujos lógicos",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "eb5be96e-a08d-43e9-99a3-84907a0437d1": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2fcacd85-02b1-4f6f-afe0-c04fffb1cbed"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "eb5be96e-a08d-43e9-99a3-84907a0437d1"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2fcacd85-02b1-4f6f-afe0-c04fffb1cbed"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "GuardarPDFS"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "eb5be96e-a08d-43e9-99a3-84907a0437d1"
+    },
+    "dependents": [],
+    "id": "93c591c4-3412-46e2-a7ae-a896ac7ca3a2"
+  },
+  "eb5be96e-a08d-43e9-99a3-84907a0437d1": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1670/1.0.1670.3526/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://linalcasa.sharepoint.com/sites/Intranet/BPO-IT": {
+        "dataSources": {
+          "InformeCasosBPSMobile": {
+            "tableName": "91382ad5-5aee-4817-a6d8-75d0384ad32d"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "InformeCasosBPSMobile"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "93c591c4-3412-46e2-a7ae-a896ac7ca3a2"
+    ],
+    "id": "eb5be96e-a08d-43e9-99a3-84907a0437d1"
+  }
+}

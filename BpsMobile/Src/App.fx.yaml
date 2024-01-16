@@ -1,0 +1,45 @@
+App As appinfo:
+    BackEnabled: =true
+    ConfirmExit: =true
+    ConfirmExitMessage: =true
+    OnStart: |-
+        =Set(
+            gblNavItems,
+            Table(
+                {
+                    MenuText: "Inicio",
+                    MenuIcon: Icon.Home,
+                    ScreenToGoTo: Home
+                },
+                {
+                    MenuText: "Caso",
+                    MenuIcon: Icon.Tools,
+                    ScreenToGoTo: Caso
+                },
+                {
+                    MenuText: "Inventario",
+                    MenuIcon: Icon.ComputerDesktop,
+                    ScreenToGoTo: Inventario
+                },
+                {
+                    MenuText: "Encuesta",
+                    MenuIcon: Icon.DocumentWithContent,
+                    ScreenToGoTo: Encuesta
+                },
+                {
+                    MenuText: "Resumen",
+                    MenuIcon: Icon.Save,
+                    ScreenToGoTo: Resumen
+                }
+            )
+        )
+    StartScreen: =
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

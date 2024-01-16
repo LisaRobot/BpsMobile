@@ -1,0 +1,2090 @@
+Inventario As screen:
+    BackgroundImage: =textura_chat
+    Fill: =RGBA(0, 32, 78, 0)
+    OnVisible: |+
+        =Set(
+            _idSeccion,
+            1
+        )
+        
+        
+
+    Titulo1_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =5
+
+        RectQuickActionBar1_2 As rectangle:
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =88
+            Tooltip: =
+            Width: =Parent.Width
+            ZIndex: =2
+
+        Titulo_2 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =88
+            Size: =27
+            Text: ="BPS MOBILE"
+            Tooltip: =
+            Width: =Parent.Width
+            ZIndex: =3
+
+        Restablecer_2 As icon.Reset:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Reload
+            OnSelect: |
+                =Set(popup_ResVal2,true)
+            Tooltip: =
+            X: =558
+            Y: =12
+            ZIndex: =4
+
+    Canvas1_2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =943
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1.Y + RectQuickActionBar1.Height
+        ZIndex: =7
+
+        SerieEquipo_1 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =112
+            Width: =639
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+            Group1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =5
+
+                Serial_valor As text:
+                    Default: =SerialArand
+                    Height: =54
+                    Reset: = resetarControles
+                    Size: =16
+                    Width: =305
+                    X: =144
+                    Y: =21
+                    ZIndex: =2
+
+                Serial As label:
+                    Fill: =RGBA(219, 219, 219, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =52
+                    OnSelect: =
+                    Size: =18
+                    Text: ="SERIAL"
+                    Width: =108
+                    X: =24
+                    Y: =24
+                    ZIndex: =3
+
+                "BarcodeReader1 As 'Lector de código de barras'":
+                    BorderFillColor: =RGBA(47, 81, 151, 1)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledContentColor: =RGBA(166, 166, 166, 1)
+                    DisabledFillColor: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =DisplayMode.Edit
+                    FillColor: =RGBA(208, 19, 31, 1)
+                    FontSize: =18
+                    FontWeight: =FontWeight.Bold
+                    Height: =55
+                    HoverBorderColor: =RGBA(88, 115, 171, 1)
+                    HoverContentColor: =RGBA(255, 255, 255, 1)
+                    HoverFillColor: =RGBA(47, 81, 151, 1)
+                    OnCancel: =false
+                    OnScan: =Set(SerialArand,First(BarcodeReader1.Barcodes).Value)
+                    PressedBorderColor: =RGBA(56, 96, 178, 1)
+                    PressedContentColor: =RGBA(56, 96, 178, 1)
+                    PressedFillColor: =RGBA(255, 255, 255, 1)
+                    ScanningQuality: ='BarcodeReader.ScanningQuality'.VeryHigh
+                    Text: ="Escanear"
+                    TextColor: =RGBA(255, 255, 255, 1)
+                    Width: =119
+                    X: =467
+                    Y: =21
+                    ZIndex: =4
+
+        Pestañas As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =4
+
+            "Gallery3 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
+                DelayItemLoading: =true
+                Height: =70
+                Items: |-
+                    =[
+                        {id: 1, seccion: "INFORMACIÓN DEL DISPOSITIVO"},
+                        {id: 2, seccion: "HARDWARE"},
+                        {id: 3, seccion: "SOFTWARE"},
+                        {id: 4, seccion: "SERVICIO"}
+                    ]
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =App.Width / 4
+                ZIndex: =1
+
+                Button1 As button:
+                    Fill: =If(ThisItem.id = _idSeccion, RGBA(208, 19, 31, 100),  RGBA(0, 32, 78, 1))
+                    Font: =Font.'Segoe UI'
+                    Height: =71
+                    HoverFill: =RGBA(208, 19, 31, 1)
+                    OnSelect: =Set(_idSeccion, ThisItem.id)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(208, 19, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =13
+                    Text: =ThisItem.seccion
+                    ZIndex: =1
+
+        InfDelDispos As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =948
+            Visible: =_idSeccion = 1
+            Width: =640
+            WidthFit: =true
+            X: =0
+            Y: =2
+            ZIndex: =5
+
+            Gallery4 As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =1000
+                Items: |-
+                    =First(Search(
+                        ADA_VIEW_INTEGRACION_CIS_2,
+                        Serial_valor.Text,
+                        "IntrSerial",
+                        "SuppSerial"
+                    ))
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplateSize: =958
+                ZIndex: =1
+
+                SerLinMonitor As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =29
+
+                    SerLinMon As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =59
+                        Size: =18
+                        Text: ="Serial (RT/CU/Fabrica)"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(Mon_valor.Selected.Value = "SI",true,false)
+                        Width: =275
+                        X: =315
+                        Y: =608
+                        ZIndex: =24
+
+                    SerLinMon_valor As text:
+                        Align: =Align.Center
+                        Default: =First(SerLinMonScan.Barcodes).Value 
+                        Height: =51
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Visible: =If(Mon_valor.Selected.Value = "SI",true,false)
+                        Width: =275
+                        X: =315
+                        Y: =684
+                        ZIndex: =26
+
+                Group30 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =41
+
+                    Nit As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Contrato"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =134
+                        X: =383
+                        Y: =8
+                        ZIndex: =29
+
+                    Nit_valor As text:
+                        Align: =Align.Center
+                        Default: =ThisItem.CardCode
+                        Height: =60
+                        Mode: =TextMode.MultiLine
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =280
+                        X: =310
+                        Y: =62
+                        ZIndex: =30
+
+                    visi_18 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: |
+                            =If(Nit_valor.Text = "", true,false)
+                        Width: =38
+                        X: =315
+                        Y: =8
+                        ZIndex: =32
+
+                Group31 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =41
+
+                    Mon As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =64
+                        Size: =18
+                        Text: ="¿Tiene monitor asignado?"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =245
+                        X: =59
+                        Y: =613
+                        ZIndex: =19
+
+                    Mon_valor As radio:
+                        Align: =Align.Center
+                        Default: =""
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =58
+                        Items: =["SI","NO"]
+                        Layout: =Layout.Horizontal
+                        OnSelect: =Select(Parent)
+                        RadioSize: =30
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =276
+                        X: =28
+                        Y: =677
+                        ZIndex: =23
+
+                    visi_26 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(Mon_valor),true,false)
+                        Width: =38
+                        X: =23
+                        Y: =621
+                        ZIndex: =40
+
+                Group23 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =41
+
+                    TipoAct As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Tipo activo"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =243
+                        X: =345
+                        Y: =506
+                        ZIndex: =16
+
+                    TipoAct_valor As text:
+                        Align: =Align.Center
+                        Default: =ThisItem.U_DESCRIP_ARRIENDO
+                        Height: =44
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =275
+                        X: =313
+                        Y: =557
+                        ZIndex: =17
+
+                    visi_25 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(TipoAct_valor.Text = "", true,false)
+                        Width: =38
+                        X: =307
+                        Y: =508
+                        ZIndex: =39
+
+                Group22 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =41
+
+                    Prop As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =47
+                        Size: =18
+                        Text: ="Propietario"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =239
+                        X: =59
+                        Y: =503
+                        ZIndex: =14
+
+                    ListProp As dropdown:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        Default: =
+                        Height: =44
+                        Items: |-
+                            =
+                            ["","Linalca informatica","Cliente"]
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =275
+                        X: =23
+                        Y: =554
+                        ZIndex: =18
+
+                    visi_24 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(ListProp.Selected.Value = "",true,false)
+                        Width: =38
+                        X: =21
+                        Y: =503
+                        ZIndex: =38
+
+                Group25 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =41
+
+                    Mod As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Modelo"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =243
+                        X: =345
+                        Y: =393
+                        ZIndex: =12
+
+                    Mod_valor As text:
+                        Align: =Align.Center
+                        Default: =ThisItem.Modelo
+                        Height: =44
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =275
+                        X: =313
+                        Y: =444
+                        ZIndex: =13
+
+                    visi_23 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(Mod_valor.Text = "", true,false)
+                        Width: =38
+                        X: =305
+                        Y: =397
+                        ZIndex: =37
+
+                Group24 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =41
+
+                    Marc As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Marca"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =239
+                        X: =59
+                        Y: =393
+                        ZIndex: =10
+
+                    Marc_valor As text:
+                        Align: =Align.Center
+                        Default: =ThisItem.Marca
+                        Height: =44
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =275
+                        X: =23
+                        Y: =444
+                        ZIndex: =11
+
+                    visi_22 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: |
+                            =If(Marc_valor.Text = "" , true,false)
+                        Width: =38
+                        X: =21
+                        Y: =393
+                        ZIndex: =36
+
+                Group27 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =41
+
+                    SerLinEqui As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Serial Linalca"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =243
+                        X: =345
+                        Y: =278
+                        ZIndex: =7
+
+                    SerLinEqui_valor As text:
+                        Align: =Align.Center
+                        Default: =ThisItem.SuppSerial
+                        Height: =44
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =275
+                        X: =313
+                        Y: =329
+                        ZIndex: =9
+
+                    visi_21 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(SerLinEqui_valor.Text = "",true,false)
+                        Width: =38
+                        X: =307
+                        Y: =281
+                        ZIndex: =35
+
+                Group26 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =41
+
+                    SerFabEqui As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Serial Fábrica"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =245
+                        X: =59
+                        Y: =278
+                        ZIndex: =6
+
+                    SerFabEqui_valor As text:
+                        Align: =Align.Center
+                        Default: =ThisItem.IntrSerial
+                        Height: =44
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =275
+                        X: =29
+                        Y: =329
+                        ZIndex: =8
+
+                    visi_20 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(SerFabEqui_valor.Text = "", true,false)
+                        Width: =38
+                        X: =21
+                        Y: =280
+                        ZIndex: =34
+
+                Group28 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =41
+
+                    DescItem As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Descripción del item"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =275
+                        X: =175
+                        Y: =138
+                        ZIndex: =2
+
+                    DescItem_valor As text:
+                        Align: =Align.Center
+                        Default: =ThisItem.Producto
+                        Height: =72
+                        Mode: =TextMode.MultiLine
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =576
+                        X: =23
+                        Y: =192
+                        ZIndex: =3
+
+                    visi_19 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(DescItem_valor.Text = "", true,false)
+                        Width: =38
+                        X: =29
+                        Y: =137
+                        ZIndex: =33
+
+                Group29 As group:
+                    Height: =5
+                    Width: =5
+                    X: =60
+                    Y: =60
+                    ZIndex: =41
+
+                    Clie As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Cliente"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =134
+                        X: =97
+                        Y: =8
+                        ZIndex: =4
+
+                    Clie_valor As text:
+                        Align: =Align.Center
+                        Default: =ThisItem.Cliente
+                        Height: =60
+                        Mode: =TextMode.MultiLine
+                        OnSelect: =Select(Parent)
+                        Reset: = resetarControles
+                        Size: =16
+                        Width: =280
+                        X: =24
+                        Y: =62
+                        ZIndex: =5
+
+                    visi_17 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(Clie_valor.Text = "",true,false)
+                        Width: =38
+                        X: =28
+                        Y: =8
+                        ZIndex: =31
+
+            "SerLinMonScan As 'Lector de código de barras'":
+                BorderFillColor: =RGBA(47, 81, 151, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledContentColor: =RGBA(166, 166, 166, 1)
+                DisabledFillColor: =RGBA(244, 244, 244, 1)
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =RGBA(208, 19, 31, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =57
+                HoverBorderColor: =RGBA(88, 115, 171, 1)
+                HoverContentColor: =RGBA(255, 255, 255, 1)
+                HoverFillColor: =RGBA(47, 81, 151, 1)
+                OnCancel: =false
+                OnScan: =false
+                PressedBorderColor: =RGBA(56, 96, 178, 1)
+                PressedContentColor: =RGBA(56, 96, 178, 1)
+                PressedFillColor: =RGBA(255, 255, 255, 1)
+                ScanningQuality: ='BarcodeReader.ScanningQuality'.VeryHigh
+                Text: ="Scanear"
+                TextColor: =RGBA(255, 255, 255, 1)
+                Visible: =If(Mon_valor.Selected.Value = "SI",true,false)
+                Width: =125
+                X: =414
+                Y: =746
+                ZIndex: =2
+
+        Hardware As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =622
+            Visible: =_idSeccion = 2
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =6
+
+            Gallery1 As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =800
+                Items: |
+                    = First(Search(
+                            ADA_VIEW_INTEGRACION_CIS_2,
+                            Serial_valor.Text,
+                            "IntrSerial",
+                            "SuppSerial"
+                        ))
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplateSize: =570
+                ZIndex: =1
+
+                Group41 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =21
+
+                    MenRam As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =52
+                        Size: =18
+                        Text: ="Memoria RAM"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =245
+                        X: =34
+                        ZIndex: =1
+
+                    ListMemRam As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        ChevronHoverBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        HoverBorderColor: =
+                        InputTextPlaceholder: =ThisItem.'Memoria RAM'
+                        Items: |-
+                            =[
+                                ThisItem.'Memoria RAM',
+                                "128GB",
+                                "12GB",
+                                "16GB",
+                                "1GB",
+                                "24GB",
+                                "256GB",
+                                "2GB",
+                                "32GB",
+                                "4GB",
+                                "512GB",
+                                "64GB",
+                                "6GB",
+                                "8GB",
+                                "96GB",
+                                "N/A"
+                            ]
+                        OnSelect: =Select(Parent)
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search([
+                                ThisItem.'Memoria RAM',
+                                "128GB",
+                                "12GB",
+                                "16GB",
+                                "1GB",
+                                "24GB",
+                                "256GB",
+                                "2GB",
+                                "32GB",
+                                "4GB",
+                                "512GB",
+                                "64GB",
+                                "6GB",
+                                "8GB",
+                                "96GB",
+                                "N/A"
+                            ],ListMemRam.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =4
+                        Y: =52
+                        ZIndex: =8
+
+                    visi_33 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(ListMemRam.Selected.Value),true,false)
+                        Width: =38
+                        X: =8
+                        Y: =4
+                        ZIndex: =15
+
+                Group36 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =21
+
+                    DisDuro As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Disco Duro"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =237
+                        X: =338
+                        ZIndex: =2
+
+                    ListDisDuro As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        InputTextPlaceholder: =ThisItem.'Disco Duro'
+                        Items: |-
+                            =[ThisItem.'Disco Duro',
+                                "1TB SSD",
+                                "1.2TB",
+                                "1.5TB",
+                                "10TB",
+                                "128GB SSD",
+                                "12TB",
+                                "14TB",
+                                "16TB",
+                                "18TB",
+                                "1TB ",
+                                "20TB",
+                                "22TB",
+                                "24TB",
+                                "250GB",
+                                "256GB SSD",
+                                "2TB",
+                                "320GB",
+                                "4TB",
+                                "500GB",
+                                "512GB SSD",
+                                "600GB",
+                                "750GB",
+                                "8TB",
+                                "N/A"
+                            ]
+                        OnSelect: =Select(Parent)
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search([ThisItem.'Disco Duro',
+                                "1TB SSD",
+                                "1.2TB",
+                                "1.5TB",
+                                "10TB",
+                                "128GB SSD",
+                                "12TB",
+                                "14TB",
+                                "16TB",
+                                "18TB",
+                                "1TB ",
+                                "20TB",
+                                "22TB",
+                                "24TB",
+                                "250GB",
+                                "256GB SSD",
+                                "2TB",
+                                "320GB",
+                                "4TB",
+                                "500GB",
+                                "512GB SSD",
+                                "600GB",
+                                "750GB",
+                                "8TB",
+                                "N/A"
+                            ],ListDisDuro.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =300
+                        Y: =52
+                        ZIndex: =9
+
+                    visi_34 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(ListDisDuro.Selected.Value),true,false)
+                        Width: =38
+                        X: =300
+                        Y: =4
+                        ZIndex: =16
+
+                Group37 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =21
+
+                    Proc As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Procesador"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =233
+                        X: =46
+                        Y: =138
+                        ZIndex: =3
+
+                    listProc As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        InputTextPlaceholder: =ThisItem.Procesador
+                        Items: |-
+                            =[   ThisItem.Procesador,
+                                "A10",
+                                "A8",
+                                "C2D",
+                                "CELERON",
+                                "CI10",
+                                "CI3",
+                                "CI5",
+                                "CI7",
+                                "CI9",
+                                "RYZEN 7",
+                                "XEON",
+                                "N/A"
+                            ]
+                        OnSelect: =Select(Parent)
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search([   ThisItem.Procesador,
+                                "A10",
+                                "A8",
+                                "C2D",
+                                "CELERON",
+                                "CI10",
+                                "CI3",
+                                "CI5",
+                                "CI7",
+                                "CI9",
+                                "RYZEN 7",
+                                "XEON",
+                                "N/A"
+                            ],listProc.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =4
+                        Y: =198
+                        ZIndex: =10
+
+                    visi_35 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(listProc.Selected.Value),true,false)
+                        Width: =38
+                        X: =8
+                        Y: =135
+                        ZIndex: =17
+
+                Group38 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =21
+
+                    RefProc As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =60
+                        Size: =18
+                        Text: ="Referencia procesador"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =237
+                        X: =338
+                        Y: =138
+                        ZIndex: =4
+
+                    listRefProc As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        InputTextPlaceholder: =ThisItem.REF_PROCESADOR
+                        Items: |-
+                            =[   ThisItem.REF_PROCESADOR,
+                                "4570S",
+                                "6500",
+                                "7200U",
+                                "7500",
+                                "10000",
+                                "10210",
+                                "1135",
+                                "2100",
+                                "2120",
+                                "2400",
+                                "2600",
+                                "3110",
+                                "3210",
+                                "3220",
+                                "3380",
+                                "3470",
+                                "3500U",
+                                "3770",
+                                "4210R",
+                                "4420",
+                                "4430",
+                                "4570",
+                                "4590",
+                                "4600",
+                                "4702",
+                                "4750S",
+                                "4770",
+                                "5200",
+                                "5300",
+                                "5500",
+                                "5500U",
+                                "6200",
+                                "7200",
+                                "8100",
+                                "8200",
+                                "8500",
+                                "8700",
+                                "E2124",
+                                "E5 2603 V3",
+                                "N3060",
+                                "N/A",
+                                
+                            ]
+                        OnSelect: =Select(Parent)
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search([   ThisItem.REF_PROCESADOR,
+                                "4570S",
+                                "6500",
+                                "7200U",
+                                "7500",
+                                "10000",
+                                "10210",
+                                "1135",
+                                "2100",
+                                "2120",
+                                "2400",
+                                "2600",
+                                "3110",
+                                "3210",
+                                "3220",
+                                "3380",
+                                "3470",
+                                "3500U",
+                                "3770",
+                                "4210R",
+                                "4420",
+                                "4430",
+                                "4570",
+                                "4590",
+                                "4600",
+                                "4702",
+                                "4750S",
+                                "4770",
+                                "5200",
+                                "5300",
+                                "5500",
+                                "5500U",
+                                "6200",
+                                "7200",
+                                "8100",
+                                "8200",
+                                "8500",
+                                "8700",
+                                "E2124",
+                                "E5 2603 V3",
+                                "N3060",
+                                "N/A",
+                                
+                            ],listRefProc.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =300
+                        Y: =198
+                        ZIndex: =11
+
+                    visi_36 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(listRefProc.Selected.Value),true,false)
+                        Width: =38
+                        X: =300
+                        Y: =142
+                        ZIndex: =18
+
+                Group40 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =21
+
+                    GenPRoc As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =62
+                        Size: =18
+                        Text: |-
+                            ="Generación Procesador
+                            "
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =237
+                        X: =338
+                        Y: =262
+                        ZIndex: =6
+
+                    ListGenPRoc As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        InputTextPlaceholder: =ThisItem.Generacion
+                        Items: |-
+                            =[   ThisItem.Generacion,
+                               "GEN 2","GEN 3","GEN 4","GEN 5","GEN 6","GEN 7","GEN 8","GEN 9","GEN 10","GEN 11","GEN 12","N/A",
+                                
+                            ]
+                        OnSelect: =Select(Parent)
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search([   ThisItem.Generacion,
+                               "GEN 2","GEN 3","GEN 4","GEN 5","GEN 6","GEN 7","GEN 8","GEN 9","GEN 10","GEN 11","GEN 12","N/A",
+                                
+                            ],ListGenPRoc.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =300
+                        Y: =338
+                        ZIndex: =13
+
+                    visi_38 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(ListGenPRoc.Selected.Value),true,false)
+                        Width: =38
+                        X: =311
+                        Y: =278
+                        ZIndex: =20
+
+                Group39 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =21
+
+                    Form As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: |-
+                            ="Formato
+                            "
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =237
+                        X: =46
+                        Y: =280
+                        ZIndex: =7
+
+                    Form_valor As text:
+                        Default: =ThisItem.Formato
+                        Height: =60
+                        OnSelect: =Select(Parent)
+                        Reset: =
+                        Size: =16
+                        Width: =275
+                        X: =6
+                        Y: =338
+                        ZIndex: =14
+
+                    visi_37 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(Form_valor.Text = "" ,true,false)
+                        Width: =38
+                        X: =8
+                        Y: =280
+                        ZIndex: =19
+
+        Software As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =653
+            Visible: =_idSeccion = 3
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =7
+
+            Gallery5 As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =739
+                Items: |-
+                    =First(
+                        Search(
+                            ADA_VIEW_INTEGRACION_CIS_2,
+                            Serial_valor.Text,
+                            "IntrSerial",
+                            "SuppSerial"
+                        )
+                    )
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplateSize: =461
+                Y: =4
+                ZIndex: =1
+
+                Group42 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =17
+
+                    SisOpe As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Sistema Operativo"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =245
+                        X: =34
+                        ZIndex: =1
+
+                    ListSisOpe As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        InputTextPlaceholder: =ThisItem.'Sistema Operativo'
+                        Items: |-
+                            =[   ThisItem.'Sistema Operativo',
+                               "CHROME OS","LINUX","VMWARE","WIN10 HOME","WIN10 PRO","WIN7 PRO","WIN8 PRO","WIN SERVER 2008","WIN SERVER 2012","WIN SERVER 2016","WIN SERVER 2019","WIN VISTA","WIN11 PRO","N/A",
+                               
+                            ]
+                        OnSelect: =Select(Parent)
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search([   ThisItem.'Sistema Operativo',
+                               "CHROME OS","LINUX","VMWARE","WIN10 HOME","WIN10 PRO","WIN7 PRO","WIN8 PRO","WIN SERVER 2008","WIN SERVER 2012","WIN SERVER 2016","WIN SERVER 2019","WIN VISTA","WIN11 PRO","N/A",
+                               
+                            ],ListSisOpe.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =4
+                        Y: =44
+                        ZIndex: =6
+
+                    visi_39 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(ListSisOpe.Selected.Value),true,false)
+                        Width: =38
+                        X: =4
+                        ZIndex: =12
+
+                Group45 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =17
+
+                    verOffic As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Versión de Office"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =237
+                        X: =368
+                        ZIndex: =2
+
+                    ListVerOffic As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        InputTextPlaceholder: ="Versión de Office"
+                        Items: |-
+                            =[ "LIBRE OFFICE","MICROSOFT OFFICE 2016","MICROSOFT OFFICE 2007","MICROSOFT OFFICE 2010","MICROSOFT OFFICE 2013","MICROSOFT OFFICE 2019","MICROSOFT OFFICE 365","SHEETS","N/A",
+                            
+                            ]
+                        OnSelect: =Select(Parent)
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search([ "LIBRE OFFICE","MICROSOFT OFFICE 2016","MICROSOFT OFFICE 2007","MICROSOFT OFFICE 2010","MICROSOFT OFFICE 2013","MICROSOFT OFFICE 2019","MICROSOFT OFFICE 365","SHEETS","N/A",
+                            
+                            ],ListVerOffic.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =330
+                        Y: =44
+                        ZIndex: =7
+
+                    visi_40 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(ListVerOffic.Selected.Value),true,false)
+                        Width: =38
+                        X: =330
+                        ZIndex: =13
+
+                Group43 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =17
+
+                    Ant As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =47
+                        Size: =18
+                        Text: ="Antivirus"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =237
+                        X: =42
+                        Y: =116
+                        ZIndex: =3
+
+                    ListAnt As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        InputTextPlaceholder: ="Antivirus"
+                        Items: |-
+                            =[
+                               "avast","AVG","Bitdefender","Cortex XDR","ESET endpoint","Karpesky","Macafee","norton","panda","sophos","trend micro","otro","N/A",
+                               
+                            ]
+                        OnSelect: =Select(Parent)
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search([
+                               "avast","AVG","Bitdefender","Cortex XDR","ESET endpoint","Karpesky","Macafee","norton","panda","sophos","trend micro","otro","N/A",
+                               
+                            ],ListAnt.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =4
+                        Y: =172
+                        ZIndex: =8
+
+                    visi_41 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(ListAnt.Selected.Value),true,false)
+                        Width: =38
+                        X: =4
+                        Y: =123
+                        ZIndex: =14
+
+                Group44 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =17
+
+                    Compr As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =47
+                        Size: =18
+                        Text: ="Compresor"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =237
+                        X: =368
+                        Y: =116
+                        ZIndex: =4
+
+                    ListCom As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        InputTextPlaceholder: ="Compresor"
+                        Items: |+
+                            =[   
+                               "7-zip","izarc","winrar","otros","N/A"
+                                
+                            ]
+                            
+                            
+                            
+                            
+                            
+                            
+                        OnSelect: =Select(Parent)
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search([   
+                               "7-zip","izarc","winrar","otros","N/A"
+                                
+                            ]
+                            
+                            
+                            
+                            
+                            
+                            
+                            ,ListCom.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =330
+                        Y: =172
+                        ZIndex: =9
+
+                    visi_42 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(ListCom.Selected.Value),true,false)
+                        Width: =38
+                        X: =330
+                        Y: =116
+                        ZIndex: =15
+
+                Group46 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =17
+
+                    LectPDF As label:
+                        Align: =Align.Center
+                        Fill: =RGBA(237, 237, 237, 1)
+                        Height: =44
+                        Size: =18
+                        Text: ="Lector PDF"
+                        Tooltip: ="Ingrese número de caso"
+                        Width: =237
+                        X: =42
+                        Y: =243
+                        ZIndex: =5
+
+                    ListPDF As combobox:
+                        ChevronBackground: =RGBA(208, 19, 31, 1)
+                        DisplayFields: =["Value"]
+                        Height: =60
+                        InputTextPlaceholder: ="Lector PDF"
+                        Items: |+
+                            = [
+                                    "ADOBE",
+                                    "NITRO",
+                                    "OTROS",
+                                    "N/A"
+                                    
+                                ]
+                            
+                        OnChange: |-
+                            =If(ListPDF.Selected.Value = "Agregar otro",
+                                Set(AgregarValorPersonalizadoSeleccionado,true),
+                                Set(AgregarValorPersonalizadoSeleccionado,false))
+                        OnSelect: =
+                        Reset: =resetarControles
+                        SearchFields: =["Value"]
+                        SearchItems: |-
+                            =Search( [
+                                    "ADOBE",
+                                    "NITRO",
+                                    "OTROS",
+                                    "N/A"
+                                    
+                                ]
+                            
+                            ,ListPDF.SearchText,"Value")
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =275
+                        X: =4
+                        Y: =298
+                        ZIndex: =10
+
+                    Pdf_valor As text:
+                        Default: =""
+                        Height: =60
+                        OnChange: |
+                            = If( Pdf_valor.Text <> "",
+                                    Collect(OpcionesComboBox, { Value: Pdf_valor.Text }),
+                                    ListPDF.Selected.Value = Pdf_valor.Text
+                                )
+                        OnSelect: =
+                        Reset: =resetarControles
+                        Size: =15
+                        Visible: =AgregarValorPersonalizadoSeleccionado = true
+                        Width: =275
+                        X: =4
+                        Y: =358
+                        ZIndex: =11
+
+                    visi_43 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(208, 19, 31, 1)
+                        FontWeight: =FontWeight.Bold
+                        Size: =20
+                        Text: ="*"
+                        Tooltip: ="Ingrese número de caso"
+                        Visible: =If(IsBlank(ListPDF.Selected.Value),true,false)
+                        Width: =38
+                        X: =4
+                        Y: =247
+                        ZIndex: =16
+
+        Servicio As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1468
+            Visible: =_idSeccion = 4
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =8
+
+            Group6 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =24
+
+                "Gallery12 As gallery.'BrowseLayout_Vertical_OneImageTwoColumnVariant_ver5.0'":
+                    BorderThickness: =1
+                    DelayItemLoading: =true
+                    Height: =299
+                    Items: =Fotos
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    ShowNavigation: =true
+                    TemplatePadding: =4
+                    TemplateSize: =Min(320, Self.Height - 60)
+                    Width: =608
+                    WrapCount: =2
+                    X: =20
+                    Y: =1134
+                    ZIndex: =1
+
+                    Image3 As image:
+                        Height: =Parent.TemplateHeight
+                        Image: =ThisItem.Value
+                        OnSelect: =Select(Parent)
+                        RadiusBottomLeft: =8
+                        RadiusBottomRight: =8
+                        RadiusTopLeft: =8
+                        RadiusTopRight: =8
+                        Width: =Parent.TemplateWidth
+                        ZIndex: =1
+
+                    Borrar As icon.Trash:
+                        Color: =RGBA(208, 19, 31, 1)
+                        Fill: =RGBA(56, 96, 178, 0)
+                        HoverColor: =RGBA(56, 96, 178, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Trash
+                        OnSelect: =Remove(Fotos,ThisItem)
+                        Visible: =If(IsBlank(ThisItem.Value),IsBlank(ThisItem.Value),true)
+                        X: =234
+                        ZIndex: =2
+
+                UploadedImage5 As image:
+                    Height: =13
+                    Image: =If(IsBlank(AddMediaButton5.Media), SampleImage, AddMediaButton5.Media)
+                    Visible: =false
+                    Width: =47
+                    X: =17
+                    Y: =1125
+                    ZIndex: =8
+
+                AddMediaButton5 As addMedia:
+                    ChangePictureText: ="Capturar imagen"
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =99
+                    HoverFill: =RGBA(56, 96, 178, 1)
+                    OnChange: |-
+                        =Collect(Fotos, {Value: UploadedImage5.Image})
+                    PressedFill: =RGBA(56, 96, 178, 1)
+                    Reset: =resetarControles
+                    Size: =25
+                    Text: ="Capturar imagen"
+                    Width: =291
+                    X: =151
+                    Y: =1026
+                    ZIndex: =9
+
+                visi_31 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: |
+                        =If(IsEmpty(Fotos),true,false)
+                    Width: =38
+                    X: =26
+                    Y: =1047
+                    ZIndex: =23
+
+            Group35 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =24
+
+                Obs As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =48
+                    Size: =18
+                    Text: ="Observación del técnico"
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =544
+                    X: =64
+                    Y: =20
+                    ZIndex: =10
+
+                Obs_valor As text:
+                    Default: =""
+                    Height: =150
+                    HintText: ="Reportar fallas logicas o fisicas"
+                    Mode: =TextMode.MultiLine
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =573
+                    X: =35
+                    Y: =80
+                    ZIndex: =11
+
+                visi_27 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: |+
+                        =If(Obs_valor.Text = "" , true,false)
+                        
+                        
+                        
+                    Width: =38
+                    X: =26
+                    Y: =28
+                    ZIndex: =19
+
+            Group32 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =24
+
+                nov As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =71
+                    Size: =18
+                    Text: ="¿Con novedad?"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =546
+                    X: =64
+                    Y: =711
+                    ZIndex: =12
+
+                SelecNov As radio:
+                    Align: =Align.Center
+                    Default: =""
+                    Fill: =RGBA(237, 237, 237, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =57
+                    Items: =["SI","NO"]
+                    Layout: =Layout.Horizontal
+                    OnSelect: =
+                    RadioSize: =30
+                    Reset: = resetarControles
+                    Size: =18
+                    Width: =275
+                    X: =167
+                    Y: =793
+                    ZIndex: =13
+
+                Nov_valor As text:
+                    Default: =
+                    Height: =150
+                    Mode: =TextMode.MultiLine
+                    Reset: =resetarControles
+                    Size: =16
+                    Visible: =If(SelecNov.Selected.Value = "SI",true,false)
+                    Width: =573
+                    X: =37
+                    Y: =863
+                    ZIndex: =14
+
+                visi_30 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: |
+                        =If(IsBlank(SelecNov),true,false)
+                    Width: =38
+                    X: =35
+                    Y: =711
+                    ZIndex: =22
+
+            Group33 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =24
+
+                Recom As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =49
+                    Size: =18
+                    Text: ="Recomendación"
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =544
+                    X: =64
+                    Y: =491
+                    ZIndex: =15
+
+                Recom_valor As text:
+                    Default: =""
+                    Height: =150
+                    Mode: =TextMode.MultiLine
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =573
+                    X: =35
+                    Y: =551
+                    ZIndex: =16
+
+                visi_29 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: |
+                        =If(Recom_valor.Text = "" , true,false)
+                    Width: =38
+                    X: =20
+                    Y: =495
+                    ZIndex: =21
+
+            Group34 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =24
+
+                TrabReal As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =48
+                    Size: =18
+                    Text: ="Trabajo realizado"
+                    Tooltip: ="Ingrese la dirección"
+                    Width: =544
+                    X: =64
+                    Y: =251
+                    ZIndex: =17
+
+                TrabReal_valor As text:
+                    Default: =""
+                    Height: =150
+                    HintText: ="Reportar trabajo realizado"
+                    Mode: =TextMode.MultiLine
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =573
+                    X: =35
+                    Y: =311
+                    ZIndex: =18
+
+                visi_28 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(TrabReal_valor.Text = "" , true,false)
+                    Width: =38
+                    X: =21
+                    Y: =259
+                    ZIndex: =20
+
+    Image2_4 As image:
+        Height: =73
+        Image: =logolinalca
+        Width: =105
+        X: =10
+        Y: =10
+        ZIndex: =8
+
+    RestVal_5 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(0, 0, 0, 0.36)
+        Height: =1126
+        Visible: =popup_ResVal2
+        Width: =639
+        X: =1
+        ZIndex: =9
+
+        Rectangle1_3 As rectangle:
+            Height: =325
+            Width: =638
+            Y: =300
+            ZIndex: =1
+
+        ConfEnvi_4 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverBorderColor: =RGBA(0, 32, 78, 1)
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: |-
+                =Set(
+                    FacturableArand,
+                    ""
+                ) & Set(
+                    TipoServicioArand,
+                    ""
+                ) & Set(
+                    NomUsuarioArand,
+                    ""
+                ) & Set(
+                    CiudadArand,
+                    ""
+                ) & Set(
+                    DireccionArand,
+                    ""
+                ) & Set(
+                    AsuntoArand,
+                    ""
+                ) & Set(
+                    resetarControles,
+                    true
+                ) & Set(
+                    resetarControles,
+                    false
+                );
+                Set(
+                    popup_ResVal1,
+                    false
+                );
+                Set(
+                    horaini,
+                    ""
+                );
+                Set(
+                    CasoEspArand,
+                    0
+                );
+                Set(
+                    SerialArand,
+                    ""
+                );
+                Clear(Fotos);
+                Set(
+                    popup_ResVal2,
+                    false
+                );
+                Set(
+                    CasoEspArand,
+                    0
+                );
+                Set(
+                    SerialArand,
+                    ""
+                );
+                Clear(Fotos);
+                Set(
+                    popup_ResVal2,
+                    false
+                );
+                Set(
+                    popup_ResVal3,
+                    false
+                );Navigate(Home)
+            PressedBorderColor: =RGBA(0, 32, 78, 1)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="SI"
+            Width: =280
+            X: =28
+            Y: =536
+            ZIndex: =2
+
+        Button4_4 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 32, 78, 1)
+            Height: =70
+            HoverFill: =RGBA(208, 19, 31, 1)
+            OnSelect: =Set(popup_ResVal2,false)
+            PressedColor: =
+            PressedFill: =RGBA(208, 19, 31, 1)
+            Size: =24
+            Text: ="NO"
+            Width: =280
+            X: =325
+            Y: =536
+            ZIndex: =3
+
+        Label4_4 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =70
+            Size: =21
+            Text: ="¿Está seguro de que desea restablecer los datos?"
+            Width: =560
+            X: =28
+            Y: =445
+            ZIndex: =4
+
+        Icon1_4 As icon.Warning:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =127
+            Icon: =Icon.Warning
+            Width: =215
+            X: =200
+            Y: =315
+            ZIndex: =5
+
+    pie_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =-2
+        ZIndex: =13
+
+        Rectangle3_4 As rectangle:
+            Fill: =RGBA(0, 32, 78, 1)
+            Width: =640
+            Y: =1035
+            ZIndex: =10
+
+        Icon4_3 As icon.ChevronRight:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =90
+            Icon: =Icon.NextArrow
+            OnSelect: |-
+                =If(
+                    And(
+                        !visi_17.Visible,
+                        !visi_18.Visible,
+                        !visi_19.Visible,
+                        !visi_20.Visible,
+                        !visi_21.Visible,
+                        !visi_22.Visible,
+                        !visi_23.Visible,
+                        !visi_24.Visible,
+                        !visi_25.Visible,
+                        !visi_26.Visible,
+                        !visi_27.Visible,
+                        !visi_28.Visible,
+                        !visi_29.Visible,
+                        !visi_30.Visible,
+                        !visi_31.Visible,
+                        !visi_33.Visible,
+                        !visi_34.Visible,
+                        !visi_35.Visible,
+                        !visi_36.Visible,
+                        !visi_37.Visible,
+                        !visi_38.Visible,
+                        !visi_39.Visible,
+                        !visi_40.Visible,
+                        !visi_41.Visible,
+                        !visi_42.Visible,
+                        !visi_43.Visible
+                    ),
+                    Navigate(Encuesta),
+                    Notify(
+                        "Hay campos pendientes",
+                        NotificationType.Error
+                    )
+                )
+            Width: =100
+            X: =390
+            Y: =1040
+            ZIndex: =11
+
+        Icon5_4 As icon.ChevronLeft:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =90
+            Icon: =Icon.BackArrow
+            OnSelect: =Navigate(Caso)
+            Width: =100
+            X: =150
+            Y: =1040
+            ZIndex: =12
+

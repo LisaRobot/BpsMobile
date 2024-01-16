@@ -1,0 +1,21 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_activitypointer_forms",
+      "Namespace": "Actividades (Formularios)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_msdyn_aibfile_forms",
+      "Namespace": "AI Builder Files (Formularios)",
+      "Values": {
+        "Information": "7fd15adc-bdc4-4a17-8034-19716072da49"
+      }
+    },
+    {
+      "Kind": "default.cds_actioncarduserstate_forms",
+      "Namespace": "ActionCardUserStates (Formularios)",
+      "Values": {}
+    }
+  ]
+}
