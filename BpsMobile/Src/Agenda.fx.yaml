@@ -4,7 +4,9 @@ Agenda As screen:
         DelayItemLoading: =true
         Height: =984
         Items: |
-            =ADA_INTEGRA_CONECTION_URL_ARANDA_2
+            =Search(
+                ADA_INTEGRA_CONECTION_URL_ARANDA_2,
+                User().FullName,"UNAME")
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =201
