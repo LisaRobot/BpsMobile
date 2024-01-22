@@ -14,7 +14,7 @@ Caso As screen:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =1619
+            Height: =1800
             Width: =640
             X: =0
             Y: =1
@@ -47,8 +47,8 @@ Caso As screen:
                     Text: ="Dirección del activo"
                     Tooltip: ="Ingrese la dirección"
                     Width: =275
-                    X: =171
-                    Y: =481
+                    X: =161
+                    Y: =587
                     ZIndex: =6
 
                 DireccionActivo_valor As text:
@@ -59,8 +59,8 @@ Caso As screen:
                     Size: =16
                     Tooltip: ="Ingrese la dirección"
                     Width: =560
-                    X: =36
-                    Y: =548
+                    X: =26
+                    Y: =654
                     ZIndex: =7
 
                 visi_3 As label:
@@ -72,8 +72,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(DireccionActivo_valor.Text = "",true, false)
                     Width: =38
-                    X: =36
-                    Y: =496
+                    X: =26
+                    Y: =602
                     ZIndex: =34
 
             Group8 As group:
@@ -91,8 +91,8 @@ Caso As screen:
                     Text: ="Sede del activo"
                     Tooltip: ="Ingrese la dirección"
                     Width: =268
-                    X: =174
-                    Y: =619
+                    X: =164
+                    Y: =725
                     ZIndex: =28
 
                 SedeActivo_valor As text:
@@ -103,8 +103,8 @@ Caso As screen:
                     Size: =16
                     Tooltip: ="Ingrese la dirección"
                     Width: =560
-                    X: =36
-                    Y: =684
+                    X: =26
+                    Y: =790
                     ZIndex: =29
 
                 visi_4 As label:
@@ -116,8 +116,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(SedeActivo_valor.Text = "",true, false)
                     Width: =38
-                    X: =36
-                    Y: =636
+                    X: =26
+                    Y: =742
                     ZIndex: =35
 
             Group10 As group:
@@ -133,8 +133,8 @@ Caso As screen:
                     Size: =18
                     Text: ="Tipo de recurso"
                     Width: =203
-                    X: =347
-                    Y: =775
+                    X: =337
+                    Y: =881
                     ZIndex: =14
 
                 TipoRecurso_valor As dropdown:
@@ -144,8 +144,8 @@ Caso As screen:
                     Reset: =resetarControles
                     Size: =16
                     Width: =284
-                    X: =316
-                    Y: =828
+                    X: =306
+                    Y: =934
                     ZIndex: =15
 
                 visi_6 As label:
@@ -157,8 +157,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(TipoRecurso_valor.Selected.Value = "",true, false)
                     Width: =38
-                    X: =320
-                    Y: =772
+                    X: =310
+                    Y: =878
                     ZIndex: =37
 
             "'Datos del usuario' As label":
@@ -169,8 +169,8 @@ Caso As screen:
                 Size: =26
                 Text: ="Datos del usuario"
                 Width: =560
-                X: =36
-                Y: =918
+                X: =26
+                Y: =1024
                 ZIndex: =42
 
             Group14 As group:
@@ -186,8 +186,8 @@ Caso As screen:
                     Reset: =resetarControles
                     Size: =16
                     Width: =481
-                    X: =36
-                    Y: =1090
+                    X: =26
+                    Y: =1196
                     ZIndex: =40
 
                 Nomb_usuario As label:
@@ -198,8 +198,8 @@ Caso As screen:
                     Text: ="Nombre Usuario"
                     Tooltip: ="Ingrese número de caso"
                     Width: =330
-                    X: =104
-                    Y: =1020
+                    X: =94
+                    Y: =1126
                     ZIndex: =43
 
                 visi_8 As label:
@@ -211,8 +211,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(NomUsu_valor.Text = "",true, false)
                     Width: =38
-                    X: =36
-                    Y: =1020
+                    X: =26
+                    Y: =1126
                     ZIndex: =45
 
             Group13 As group:
@@ -228,8 +228,8 @@ Caso As screen:
                     Reset: =resetarControles
                     Size: =16
                     Width: =481
-                    X: =36
-                    Y: =1239
+                    X: =26
+                    Y: =1345
                     ZIndex: =41
 
                 Cargo As label:
@@ -240,8 +240,8 @@ Caso As screen:
                     Text: ="Cargo"
                     Tooltip: ="Ingrese número de caso"
                     Width: =330
-                    X: =104
-                    Y: =1173
+                    X: =94
+                    Y: =1279
                     ZIndex: =44
 
             Group5_1 As group:
@@ -258,8 +258,8 @@ Caso As screen:
                     Text: ="Asunto Aranda"
                     Tooltip: ="Ingrese número de caso"
                     Width: =198
-                    X: =202
-                    Y: =341
+                    X: =192
+                    Y: =447
                     ZIndex: =47
 
                 AsuntoAranda_valor As text:
@@ -271,8 +271,8 @@ Caso As screen:
                     Size: =16
                     Tooltip: ="Ingrese número de caso"
                     Width: =531
-                    X: =36
-                    Y: =392
+                    X: =26
+                    Y: =498
                     ZIndex: =48
 
                 visi_15 As label:
@@ -284,8 +284,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(AsuntoAranda_valor.Text = "",true, false)
                     Width: =36
-                    X: =42
-                    Y: =341
+                    X: =32
+                    Y: =447
                     ZIndex: =49
 
             Group6_1 As group:
@@ -301,8 +301,8 @@ Caso As screen:
                     Size: =18
                     Text: ="Tipo de servicio"
                     Width: =299
-                    X: =63
-                    Y: =105
+                    X: =53
+                    Y: =211
                     ZIndex: =50
 
                 Tip_Servicio As dropdown:
@@ -312,8 +312,8 @@ Caso As screen:
                     Reset: =resetarControles
                     Size: =16
                     Width: =336
-                    X: =36
-                    Y: =157
+                    X: =26
+                    Y: =263
                     ZIndex: =51
 
                 visi_14 As label:
@@ -325,8 +325,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(Tip_Servicio.Selected.Value = "",true, false)
                     Width: =40
-                    X: =36
-                    Y: =105
+                    X: =26
+                    Y: =211
                     ZIndex: =52
 
             Group19 As group:
@@ -342,8 +342,8 @@ Caso As screen:
                     Size: =18
                     Text: ="Facturable"
                     Width: =151
-                    X: =434
-                    Y: =105
+                    X: =424
+                    Y: =211
                     ZIndex: =4
 
                 visi_2 As label:
@@ -355,8 +355,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(ListFact.Selected.Value = "",true, false)
                     Width: =38
-                    X: =404
-                    Y: =105
+                    X: =394
+                    Y: =211
                     ZIndex: =33
 
                 ListFact As dropdown:
@@ -366,8 +366,8 @@ Caso As screen:
                     Reset: =resetarControles
                     Size: =16
                     Width: =120
-                    X: =454
-                    Y: =157
+                    X: =444
+                    Y: =263
                     ZIndex: =54
 
             Group9 As group:
@@ -385,8 +385,8 @@ Caso As screen:
                     Text: ="Ciudad"
                     Tooltip: ="Ingrese número de caso"
                     Width: =198
-                    X: =57
-                    Y: =771
+                    X: =47
+                    Y: =877
                     ZIndex: =31
 
                 visi_5 As label:
@@ -397,8 +397,8 @@ Caso As screen:
                     Text: ="*"
                     Visible: =If(IsBlank(listCiu.Selected.Value),true,false)
                     Width: =38
-                    X: =36
-                    Y: =767
+                    X: =26
+                    Y: =873
                     ZIndex: =36
 
                 listCiu As dropdown:
@@ -584,8 +584,8 @@ Caso As screen:
                     Reset: =resetarControles
                     Size: =21
                     Width: =270
-                    X: =36
-                    Y: =828
+                    X: =26
+                    Y: =934
                     ZIndex: =55
 
             Group8_1 As group:
@@ -603,8 +603,8 @@ Caso As screen:
                     Text: ="Correo"
                     Tooltip: ="Ingrese la dirección"
                     Width: =268
-                    X: =174
-                    Y: =1325
+                    X: =164
+                    Y: =1431
                     ZIndex: =56
 
                 correo_valor As text:
@@ -615,8 +615,8 @@ Caso As screen:
                     Size: =16
                     Tooltip: ="Ingrese la dirección"
                     Width: =560
-                    X: =36
-                    Y: =1390
+                    X: =26
+                    Y: =1496
                     ZIndex: =57
 
                 visi_9 As label:
@@ -628,8 +628,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(correo_valor.Text = "",true, false)
                     Width: =38
-                    X: =36
-                    Y: =1342
+                    X: =26
+                    Y: =1448
                     ZIndex: =58
 
             Group8_2 As group:
@@ -647,8 +647,8 @@ Caso As screen:
                     Text: ="Telefono"
                     Tooltip: ="Ingrese la dirección"
                     Width: =268
-                    X: =174
-                    Y: =1457
+                    X: =164
+                    Y: =1563
                     ZIndex: =59
 
                 Telefono_valor As text:
@@ -659,8 +659,8 @@ Caso As screen:
                     Size: =16
                     Tooltip: ="Ingrese la dirección"
                     Width: =560
-                    X: =36
-                    Y: =1522
+                    X: =26
+                    Y: =1628
                     ZIndex: =60
 
                 visi_32 As label:
@@ -672,8 +672,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(Telefono_valor.Text = "",true, false)
                     Width: =38
-                    X: =36
-                    Y: =1474
+                    X: =26
+                    Y: =1580
                     ZIndex: =61
 
             Group5 As group:
@@ -690,8 +690,8 @@ Caso As screen:
                     Text: ="Caso Aranda"
                     Tooltip: ="Ingrese número de caso"
                     Width: =253
-                    X: =95
-                    Y: =225
+                    X: =58
+                    Y: =331
                     ZIndex: =2
 
                 visi_1 As label:
@@ -703,8 +703,8 @@ Caso As screen:
                     Tooltip: ="Ingrese número de caso"
                     Visible: =If(CasoAranda_valor.Text = "",true, false)
                     Width: =46
-                    X: =36
-                    Y: =226
+                    X: =26
+                    Y: =332
                     ZIndex: =32
 
                 CasoAranda_valor As text:
@@ -713,9 +713,93 @@ Caso As screen:
                     Reset: =resetarControles
                     Size: =16
                     Width: =303
-                    X: =44
-                    Y: =269
+                    X: =34
+                    Y: =375
                     ZIndex: =62
+
+            Group14_1 As group:
+                Height: =5
+                Width: =5
+                X: =14
+                Y: =-1086
+                ZIndex: =66
+
+                NomCli_valor As text:
+                    Default: =ClientArand
+                    Height: =50
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =280
+                    X: =26
+                    Y: =145
+                    ZIndex: =63
+
+                Nomb_cliente As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =50
+                    Size: =17
+                    Text: ="Nombre Cliente"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =259
+                    X: =47
+                    Y: =85
+                    ZIndex: =64
+
+                visi_17 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(NomCli_valor.Text = "",true, false)
+                    Width: =38
+                    X: =18
+                    Y: =75
+                    ZIndex: =65
+
+            Group14_2 As group:
+                Height: =5
+                Width: =5
+                X: =22
+                Y: =-35
+                ZIndex: =69
+
+                CodSap_valor As text:
+                    Default: =CodSap
+                    Height: =50
+                    Reset: =resetarControles
+                    Size: =16
+                    Width: =269
+                    X: =328
+                    Y: =145
+                    ZIndex: =66
+
+                Codigo_Sap As label:
+                    Align: =Align.Center
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =50
+                    Size: =17
+                    Text: ="Contrato"
+                    Tooltip: ="Ingrese número de caso"
+                    Width: =243
+                    X: =357
+                    Y: =85
+                    ZIndex: =67
+
+                visi_18 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(208, 19, 31, 1)
+                    FontWeight: =FontWeight.Bold
+                    Size: =20
+                    Text: ="*"
+                    Tooltip: ="Ingrese número de caso"
+                    Visible: =If(CodSap_valor.Text = "",true, false)
+                    Width: =37
+                    X: =320
+                    Y: =75
+                    ZIndex: =68
 
         DataCard4 As dataCard.blankCard:
             BorderColor: =RGBA(0, 0, 0, 1)
@@ -1071,7 +1155,9 @@ Caso As screen:
                          !visi_9.Visible,
                          !visi_32.Visible,
                          !visi_14.Visible,
-                         !visi_15.Visible
+                         !visi_15.Visible,
+                         !visi_17.Visible,
+                         !visi_18.Visible
                          
                 
                            

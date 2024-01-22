@@ -36,7 +36,7 @@ Resumen As screen:
                         <html>
                         <head>
                             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                            <title>" & Clie_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf</title>
+                            <title>" & NomCli_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf</title>
                         </head>
                         <body style='margin: 10px'>
                         <div style='margin: 10px;'> 
@@ -63,10 +63,10 @@ Resumen As screen:
                              
                                 <table style='width: auto;height: auto; text-align: left;padding-right:5px;  padding-left:5px; font-size: 0.8rem;'>         
                                     <tr>
-                                        <td '><b>Compañia:</b> " & Clie_valor & " <br>
-                                        <b>Contrato:</b> " & Nit_valor & "<br>
+                                        <td '><b>Compañia:</b> " & NomCli_valor & " <br>
+                                        <b>Contrato:</b> " & CodSap_valor & "<br>
                                         <b>Ciudad:</b> " & listCiu.Selected.Value & "</td>
-                                        <td ><b>Cliente:</b> " & Clie_valor & " <br>
+                                        <td ><b>Cliente:</b> " & NomCli_valor & " <br>
                                         <b>Direccion:</b> " & DireccionActivo_valor & "<br>
                                         <b>Sede:</b> " & SedeActivo_valor & "
                                         </td>
@@ -292,7 +292,7 @@ Resumen As screen:
                 ) & GuardarPDFS.Run(
                     {
                         file: {
-                            name: Clie_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf",
+                            name: NomCli_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf",
                             contentBytes: PDF (
                                 Container1,
                                 {
@@ -320,8 +320,8 @@ Resumen As screen:
                         AsuntoAranda: AsuntoAranda_valor.Text,
                         TipoServicio: Tip_Servicio.Selected.Value,
                         Facturable: ListFact.Selected.Value,
-                        Cliente: Clie_valor.Text,
-                        Nit: Nit_valor.Text,
+                        Cliente: NomCli_valor.Text,
+                        Nit: CodSap_valor.Text,
                         DirActivo: DireccionActivo_valor.Text,
                         SedActivo: SedeActivo_valor.Text,
                         Ciudad: listCiu.Selected.Value,
@@ -367,7 +367,9 @@ Resumen As screen:
                         Hora_Inicio: horaini,
                         Hora_Final: horafin,
                         Duración: duracion,
-                        RutaPDF: "https://linalcasa.sharepoint.com/sites/Intranet/BPO-IT/MantenimientosBPS/PDFS/ " & Clie_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf"
+                        RutaPDF: "https://linalcasa.sharepoint.com/sites/Intranet/BPO-IT/MantenimientosBPS/PDFS/ " & NomCli_valor & "-" & CasoAranda_valor & "-" & SerFabEqui_valor & ".pdf",
+                        Grupo_Especialista: SubGrupo
+                        
                     }
                 );
                 If(
@@ -511,7 +513,7 @@ Resumen As screen:
             Height: =44
             IsInDataCard: =true
             Items: |-
-                ={Name: CasoAranda_valor&"-"&SerLinEqui_valor&".pdf", Value:pdfDoc}
+                ={Name: CasoAranda_valor&"-"&SerFabEqui_valor&".pdf", Value:pdfDoc}
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5.18

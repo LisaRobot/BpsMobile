@@ -206,7 +206,7 @@ Inventario As screen:
                         Visible: =If(Mon_valor.Selected.Value = "SI",true,false)
                         Width: =275
                         X: =315
-                        Y: =608
+                        Y: =507
                         ZIndex: =24
 
                     SerLinMon_valor As text:
@@ -219,54 +219,8 @@ Inventario As screen:
                         Visible: =If(Mon_valor.Selected.Value = "SI",true,false)
                         Width: =275
                         X: =315
-                        Y: =684
+                        Y: =583
                         ZIndex: =26
-
-                Group30 As group:
-                    Height: =5
-                    Width: =5
-                    X: =60
-                    Y: =60
-                    ZIndex: =41
-
-                    Nit As label:
-                        Align: =Align.Center
-                        Fill: =RGBA(237, 237, 237, 1)
-                        Height: =44
-                        Size: =18
-                        Text: ="Contrato"
-                        Tooltip: ="Ingrese número de caso"
-                        Width: =134
-                        X: =383
-                        Y: =8
-                        ZIndex: =29
-
-                    Nit_valor As text:
-                        Align: =Align.Center
-                        Default: =ThisItem.CardCode
-                        Height: =60
-                        Mode: =TextMode.MultiLine
-                        OnSelect: =Select(Parent)
-                        Reset: = resetarControles
-                        Size: =16
-                        Width: =280
-                        X: =310
-                        Y: =62
-                        ZIndex: =30
-
-                    visi_18 As label:
-                        Align: =Align.Center
-                        Color: =RGBA(208, 19, 31, 1)
-                        FontWeight: =FontWeight.Bold
-                        Size: =20
-                        Text: ="*"
-                        Tooltip: ="Ingrese número de caso"
-                        Visible: |
-                            =If(Nit_valor.Text = "", true,false)
-                        Width: =38
-                        X: =315
-                        Y: =8
-                        ZIndex: =32
 
                 Group31 As group:
                     Height: =5
@@ -283,8 +237,8 @@ Inventario As screen:
                         Text: ="¿Tiene monitor asignado?"
                         Tooltip: ="Ingrese número de caso"
                         Width: =245
-                        X: =59
-                        Y: =613
+                        X: =60
+                        Y: =499
                         ZIndex: =19
 
                     Mon_valor As radio:
@@ -299,8 +253,8 @@ Inventario As screen:
                         Reset: = resetarControles
                         Size: =16
                         Width: =276
-                        X: =28
-                        Y: =677
+                        X: =29
+                        Y: =563
                         ZIndex: =23
 
                     visi_26 As label:
@@ -312,8 +266,8 @@ Inventario As screen:
                         Tooltip: ="Ingrese número de caso"
                         Visible: =If(IsBlank(Mon_valor),true,false)
                         Width: =38
-                        X: =23
-                        Y: =621
+                        X: =24
+                        Y: =507
                         ZIndex: =40
 
                 Group23 As group:
@@ -331,8 +285,8 @@ Inventario As screen:
                         Text: ="Tipo activo"
                         Tooltip: ="Ingrese número de caso"
                         Width: =243
-                        X: =345
-                        Y: =506
+                        X: =346
+                        Y: =392
                         ZIndex: =16
 
                     TipoAct_valor As text:
@@ -343,8 +297,8 @@ Inventario As screen:
                         Reset: = resetarControles
                         Size: =16
                         Width: =275
-                        X: =313
-                        Y: =557
+                        X: =314
+                        Y: =443
                         ZIndex: =17
 
                     visi_25 As label:
@@ -356,8 +310,8 @@ Inventario As screen:
                         Tooltip: ="Ingrese número de caso"
                         Visible: =If(TipoAct_valor.Text = "", true,false)
                         Width: =38
-                        X: =307
-                        Y: =508
+                        X: =308
+                        Y: =394
                         ZIndex: =39
 
                 Group22 As group:
@@ -375,8 +329,8 @@ Inventario As screen:
                         Text: ="Propietario"
                         Tooltip: ="Ingrese número de caso"
                         Width: =239
-                        X: =59
-                        Y: =503
+                        X: =60
+                        Y: =389
                         ZIndex: =14
 
                     ListProp As dropdown:
@@ -390,8 +344,8 @@ Inventario As screen:
                         Reset: = resetarControles
                         Size: =16
                         Width: =275
-                        X: =23
-                        Y: =554
+                        X: =24
+                        Y: =440
                         ZIndex: =18
 
                     visi_24 As label:
@@ -403,8 +357,8 @@ Inventario As screen:
                         Tooltip: ="Ingrese número de caso"
                         Visible: =If(ListProp.Selected.Value = "",true,false)
                         Width: =38
-                        X: =21
-                        Y: =503
+                        X: =22
+                        Y: =389
                         ZIndex: =38
 
                 Group25 As group:
@@ -422,8 +376,8 @@ Inventario As screen:
                         Text: ="Modelo"
                         Tooltip: ="Ingrese número de caso"
                         Width: =243
-                        X: =345
-                        Y: =393
+                        X: =346
+                        Y: =279
                         ZIndex: =12
 
                     Mod_valor As text:
@@ -434,8 +388,8 @@ Inventario As screen:
                         Reset: = resetarControles
                         Size: =16
                         Width: =275
-                        X: =313
-                        Y: =444
+                        X: =314
+                        Y: =330
                         ZIndex: =13
 
                     visi_23 As label:
@@ -447,8 +401,8 @@ Inventario As screen:
                         Tooltip: ="Ingrese número de caso"
                         Visible: =If(Mod_valor.Text = "", true,false)
                         Width: =38
-                        X: =305
-                        Y: =397
+                        X: =306
+                        Y: =283
                         ZIndex: =37
 
                 Group24 As group:
@@ -466,8 +420,8 @@ Inventario As screen:
                         Text: ="Marca"
                         Tooltip: ="Ingrese número de caso"
                         Width: =239
-                        X: =59
-                        Y: =393
+                        X: =60
+                        Y: =279
                         ZIndex: =10
 
                     Marc_valor As text:
@@ -478,8 +432,8 @@ Inventario As screen:
                         Reset: = resetarControles
                         Size: =16
                         Width: =275
-                        X: =23
-                        Y: =444
+                        X: =24
+                        Y: =330
                         ZIndex: =11
 
                     visi_22 As label:
@@ -492,8 +446,8 @@ Inventario As screen:
                         Visible: |
                             =If(Marc_valor.Text = "" , true,false)
                         Width: =38
-                        X: =21
-                        Y: =393
+                        X: =22
+                        Y: =279
                         ZIndex: =36
 
                 Group27 As group:
@@ -511,8 +465,8 @@ Inventario As screen:
                         Text: ="Serial Linalca"
                         Tooltip: ="Ingrese número de caso"
                         Width: =243
-                        X: =345
-                        Y: =278
+                        X: =346
+                        Y: =164
                         ZIndex: =7
 
                     SerLinEqui_valor As text:
@@ -523,8 +477,8 @@ Inventario As screen:
                         Reset: = resetarControles
                         Size: =16
                         Width: =275
-                        X: =313
-                        Y: =329
+                        X: =314
+                        Y: =215
                         ZIndex: =9
 
                     visi_21 As label:
@@ -536,8 +490,8 @@ Inventario As screen:
                         Tooltip: ="Ingrese número de caso"
                         Visible: =If(SerLinEqui_valor.Text = "",true,false)
                         Width: =38
-                        X: =307
-                        Y: =281
+                        X: =308
+                        Y: =167
                         ZIndex: =35
 
                 Group26 As group:
@@ -555,8 +509,8 @@ Inventario As screen:
                         Text: ="Serial Fábrica"
                         Tooltip: ="Ingrese número de caso"
                         Width: =245
-                        X: =59
-                        Y: =278
+                        X: =60
+                        Y: =164
                         ZIndex: =6
 
                     SerFabEqui_valor As text:
@@ -567,8 +521,8 @@ Inventario As screen:
                         Reset: = resetarControles
                         Size: =16
                         Width: =275
-                        X: =29
-                        Y: =329
+                        X: =30
+                        Y: =215
                         ZIndex: =8
 
                     visi_20 As label:
@@ -580,8 +534,8 @@ Inventario As screen:
                         Tooltip: ="Ingrese número de caso"
                         Visible: =If(SerFabEqui_valor.Text = "", true,false)
                         Width: =38
-                        X: =21
-                        Y: =280
+                        X: =22
+                        Y: =166
                         ZIndex: =34
 
                 Group28 As group:
@@ -599,8 +553,8 @@ Inventario As screen:
                         Text: ="Descripción del item"
                         Tooltip: ="Ingrese número de caso"
                         Width: =275
-                        X: =175
-                        Y: =138
+                        X: =176
+                        Y: =24
                         ZIndex: =2
 
                     DescItem_valor As text:
@@ -612,8 +566,8 @@ Inventario As screen:
                         Reset: = resetarControles
                         Size: =16
                         Width: =576
-                        X: =23
-                        Y: =192
+                        X: =24
+                        Y: =78
                         ZIndex: =3
 
                     visi_19 As label:
@@ -625,54 +579,9 @@ Inventario As screen:
                         Tooltip: ="Ingrese número de caso"
                         Visible: =If(DescItem_valor.Text = "", true,false)
                         Width: =38
-                        X: =29
-                        Y: =137
+                        X: =30
+                        Y: =23
                         ZIndex: =33
-
-                Group29 As group:
-                    Height: =5
-                    Width: =5
-                    X: =60
-                    Y: =60
-                    ZIndex: =41
-
-                    Clie As label:
-                        Align: =Align.Center
-                        Fill: =RGBA(237, 237, 237, 1)
-                        Height: =44
-                        Size: =18
-                        Text: ="Cliente"
-                        Tooltip: ="Ingrese número de caso"
-                        Width: =134
-                        X: =97
-                        Y: =8
-                        ZIndex: =4
-
-                    Clie_valor As text:
-                        Align: =Align.Center
-                        Default: =ThisItem.Cliente
-                        Height: =60
-                        Mode: =TextMode.MultiLine
-                        OnSelect: =Select(Parent)
-                        Reset: = resetarControles
-                        Size: =16
-                        Width: =280
-                        X: =24
-                        Y: =62
-                        ZIndex: =5
-
-                    visi_17 As label:
-                        Align: =Align.Center
-                        Color: =RGBA(208, 19, 31, 1)
-                        FontWeight: =FontWeight.Bold
-                        Size: =20
-                        Text: ="*"
-                        Tooltip: ="Ingrese número de caso"
-                        Visible: =If(Clie_valor.Text = "",true,false)
-                        Width: =38
-                        X: =28
-                        Y: =8
-                        ZIndex: =31
 
             "SerLinMonScan As 'Lector de código de barras'":
                 BorderFillColor: =RGBA(47, 81, 151, 1)
@@ -696,8 +605,8 @@ Inventario As screen:
                 TextColor: =RGBA(255, 255, 255, 1)
                 Visible: =If(Mon_valor.Selected.Value = "SI",true,false)
                 Width: =125
-                X: =414
-                Y: =746
+                X: =390
+                Y: =648
                 ZIndex: =2
 
         Hardware As dataCard.blankCard:
@@ -2043,8 +1952,6 @@ Inventario As screen:
             OnSelect: |-
                 =If(
                     And(
-                        !visi_17.Visible,
-                        !visi_18.Visible,
                         !visi_19.Visible,
                         !visi_20.Visible,
                         !visi_21.Visible,
@@ -2068,7 +1975,10 @@ Inventario As screen:
                         !visi_40.Visible,
                         !visi_41.Visible,
                         !visi_42.Visible,
-                        !visi_43.Visible
+                        !visi_43.Visible,
+                        !IsBlank(DescItem_valor)
+                        
+                        
                     ),
                     Navigate(Encuesta),
                     Notify(

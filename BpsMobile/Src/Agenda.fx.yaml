@@ -3,12 +3,8 @@ Agenda As screen:
     Gallery6 As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =984
-        Items: |+
-            =Search(
-                ADA_INTEGRA_CONECTION_URL_ARANDA_2,
-                User().FullName,"UNAME")
-                
-            
+        Items: |
+            =ADA_INTEGRA_CONECTION_URL_ARANDA_2
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =201
@@ -104,7 +100,14 @@ Agenda As screen:
                 ) & Set(
                     ClientArand,
                     ThisItem.COMPANY
-                ) & Set(
+                )& Set(
+                    SubGrupo,
+                    ThisItem.Subgrupo_1
+                )& Set(
+                    CodSap,
+                    ThisItem.CodigoSAP
+                )
+                 & Set(
                     Latitud,
                     Location.Latitude
                 ) & Set(

@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
     "CdpRevision": {
       "BaseUrl": "/v2",
-      "LastChangedTimeString": "2023-11-14T18:31:08.9920000Z",
+      "LastChangedTimeString": "2024-01-11T22:14:10.4430000Z",
       "RevisionNumber": 2
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -37,6 +37,7 @@
       "serv_opened_date": "serv_opened_date",
       "SERVICIO": "SERVICIO",
       "stat_name": "stat_name",
+      "Subgrupo_1": "Subgrupo_1",
       "Tiempo": "Tiempo",
       "UNAME": "UNAME",
       "USERNAME": "USERNAME"
