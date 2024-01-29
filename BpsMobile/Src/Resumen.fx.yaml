@@ -280,7 +280,7 @@ Resumen As screen:
                     fecha,
                     Text(
                         Now(),
-                        DateTimeFormat.ShortDate
+                        "yyyy-mm-dd"
                     )
                 ) & Set(
                     duracion,
@@ -367,11 +367,21 @@ Resumen As screen:
                         Hora_Inicio: horaini,
                         Hora_Final: horafin,
                         Duración: duracion,
-                        RutaPDF: "https://linalcasa.sharepoint.com/sites/Intranet/BPO-IT/MantenimientosBPS/PDFS/ " & NomCli_valor & "-" & CasoAranda_valor & "-" & SerFabEqui_valor & ".pdf",
+                        RutaPDF: "https://linalcasa.sharepoint.com/sites/Intranet/BPO-IT/MantenimientosBPS/PDFS/" & NomCli_valor & "-" & CasoAranda_valor & "-" & SerFabEqui_valor & ".pdf",
                         Grupo_Especialista: SubGrupo
                         
                     }
                 );
+                Office365Outlook.SendEmailV2(User().Email, NomCli_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf","PDF Adjunto",
+                {Attachments:Table({Name:  NomCli_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf",ContentBytes:PDF(Container1,
+                                {
+                                    ExpandContainers: true,
+                                    Size: PaperSize.A4,
+                                    Margin: "2cm",
+                                    Orientation: PaperOrientation.Portrait
+                                })})})&
+                Notify("Email enviado",NotificationType.Success);
+                
                 If(
                     Notify(
                         "Servicio registrado",
@@ -513,7 +523,7 @@ Resumen As screen:
             Height: =44
             IsInDataCard: =true
             Items: |-
-                ={Name: CasoAranda_valor&"-"&SerFabEqui_valor&".pdf", Value:pdfDoc}
+                ={Name: NomCli_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor, Value:pdfDoc}
             PaddingBottom: =5
             PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
             PaddingRight: =5.18
