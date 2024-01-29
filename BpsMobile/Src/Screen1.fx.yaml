@@ -1,0 +1,28 @@
+Screen1 As screen:
+
+    Button3 As button:
+        Height: =70
+        OnSelect: |-
+            =Set(
+                fecha12,
+                Text(
+                    Now(),
+                    "yyyy-mm-dd hh:mm:ss.mmm"
+                )
+            )
+        Size: =24
+        Text: ="Botón"
+        Width: =280
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    Label4 As label:
+        Height: =70
+        Size: =21
+        Text: =fecha12
+        Width: =560
+        X: =57
+        Y: =177
+        ZIndex: =2
+

@@ -283,6 +283,13 @@ Resumen As screen:
                         "yyyy-mm-dd"
                     )
                 ) & Set(
+                    fecha2,
+                    Text(
+                        Now(),
+                        "yyyy-mm-dd hh:mm:ss.mmm"
+                    )
+                )
+                & Set(
                     duracion,
                     DateDiff(
                         DateTimeValue(horaini),
@@ -363,7 +370,7 @@ Resumen As screen:
                         RespEnc4: Pregunt4_valor.Text,
                         Especialista: Especialista_valor.Text,
                         UbicacionGPS: "https://maps.googleapis.com/maps/api/staticmap?center=" & Latitud & "," & Longitud & "&zoom=18&size=600x600&key=AIzaSyBMSmu9kfZ5R4uwReQ5yZDjmjeGqpRb6bE&markers=color:red%7Clabel:A%7C" & Latitud & "," & Longitud & "",
-                        FechaServicio: fecha,
+                        FechaServicio: fecha2,
                         Hora_Inicio: horaini,
                         Hora_Final: horafin,
                         Duración: duracion,
