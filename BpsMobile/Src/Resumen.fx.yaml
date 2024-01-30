@@ -286,7 +286,7 @@ Resumen As screen:
                     fecha2,
                     Text(
                         Now(),
-                        "yyyy-mm-dd hh:mm:ss.mmm"
+                        "yyyy-mm-dd HH:mm:ss.fff"
                     )
                 )
                 & Set(

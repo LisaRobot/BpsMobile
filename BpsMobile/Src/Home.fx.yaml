@@ -1,12 +1,5 @@
 Home As screen:
-    BackgroundImage: =textura_chat
-
-    Image1 As image:
-        Height: =1136
-        Image: =Captura
-        ImagePosition: =ImagePosition.Stretch
-        Width: =640
-        ZIndex: =1
+    BackgroundImage: ='FONDO BPS MOBILE 3'
 
     Icon10 As icon.Home:
         Color: =RGBA(255, 255, 255, 1)

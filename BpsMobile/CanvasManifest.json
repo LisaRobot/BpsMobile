@@ -94,6 +94,7 @@
       "useexperimentalsqlconnector": true,
       "useguiddatatypes": true,
       "usenonblockingonstartrule": true,
+      "userdefinedfunctions": false,
       "webbarcodescanner": false,
       "zeroalltabindexes": false
     },
@@ -138,7 +139,6 @@
     "Caso",
     "Inventario",
     "Encuesta",
-    "Resumen",
-    "Screen1"
+    "Resumen"
   ]
 }
