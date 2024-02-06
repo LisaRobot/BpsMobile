@@ -7,8 +7,8 @@
       "displayName": "SQL Server",
       "executionRestrictions": {
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
-        "appVer": "3.24013.17",
-        "modifiedOn": "2024-01-30 14:23:50",
+        "appVer": "3.24014.14",
+        "modifiedOn": "2024-02-06 22:17:10",
         "policy": "{\"type\":\"unused\"}",
         "version": 1
       },
@@ -51,8 +51,8 @@
       "executionRestrictions": {
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
         "apiVer": 2,
-        "appVer": "3.24013.17",
-        "modifiedOn": "2024-01-30 14:23:50",
+        "appVer": "3.24014.14",
+        "modifiedOn": "2024-02-06 22:17:10",
         "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[dbo].[ada_view_integracion_cis_2]\":[\"get\"]}}",
         "version": 1
       },
@@ -95,8 +95,8 @@
       "executionRestrictions": {
         "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
         "apiVer": 2,
-        "appVer": "3.24013.17",
-        "modifiedOn": "2024-01-30 14:23:50",
+        "appVer": "3.24014.14",
+        "modifiedOn": "2024-02-06 22:17:10",
         "policy": "{\"type\":\"tabular\",\"dataSources\":{\"[dbo].[ada_integra_conection_url_aranda_2]\":[\"get\"]}}",
         "version": 1
       },

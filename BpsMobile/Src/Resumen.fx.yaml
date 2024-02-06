@@ -53,7 +53,7 @@ Resumen As screen:
                                     <tr>
                                         <td style='border: 1px solid black;'>Tipo Actividad: PRESTACIÓN SERVICIOS<br>
                                         NOMBRE DEL TÉCNICO: " & Especialista_valor & "<br>
-                                        FECHA:"&fecha&", HORA INICIAL: "&horaini&", HORA FINAL: " &horafin& ", DURACIÓN:"&duracion&" minuto(s)</td>
+                                        FECHA:"&Text(Now(), "yyyy-mm-dd")&", HORA INICIAL: "&horaini&", HORA FINAL: " &horafin& ", DURACIÓN:"&duracion&" minuto(s)</td>
                                         <td style='border: 1px solid black; '> #CASO DE ARANDA:" & CasoAranda_valor & " </td>
                                     </tr>  
                                 </table>
@@ -296,7 +296,14 @@ Resumen As screen:
                         DateTimeValue(horafin),
                         TimeUnit.Minutes
                     )
-                ) & GuardarPDFS.Run(
+                );
+                Set(
+                    popup_visible,
+                    false
+                ) & Set(
+                    popup_visiblefin,
+                    true
+                )& GuardarPDFS.Run(
                     {
                         file: {
                             name: NomCli_valor & "-" & CasoAranda_valor & "-" & SerLinEqui_valor & ".pdf",
@@ -311,13 +318,6 @@ Resumen As screen:
                             )
                         }
                     }
-                );
-                Set(
-                    popup_visible,
-                    false
-                ) & Set(
-                    popup_visiblefin,
-                    true
                 );
                 Patch(
                     InformeCasosBPSMobile,
@@ -471,7 +471,14 @@ Resumen As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =90
             Icon: =Icon.CheckBadge
-            OnSelect: =Set(popup_visible,true)
+            OnSelect: |-
+                =Set(popup_visible,true)&
+                Set(
+                    horafin,
+                    Text(
+                        DateTimeValue(Now()),
+                        "hh:mm"
+                    ))
             Width: =100
             X: =390
             Y: =1040
