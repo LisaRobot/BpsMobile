@@ -3,7 +3,10 @@ Agenda As screen:
     Gallery6 As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =832
-        Items: =   ADA_INTEGRA_CONECTION_URL_ARANDA_2
+        Items: |
+            =Search(
+                ADA_INTEGRA_CONECTION_URL_ARANDA_2,
+                User().FullName,"UNAME")
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =201
